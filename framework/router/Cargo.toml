@@ -1,0 +1,12 @@
+[package]
+name = "aether-router"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+
+[dependencies]
+aether-http = { path = "../http" }
+smallvec.workspace = true
+
+[dev-dependencies]
+proptest.workspace = true
