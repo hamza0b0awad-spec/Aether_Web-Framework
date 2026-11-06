@@ -1,0 +1,15 @@
+[package]
+name = "aether-benchmarks"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+
+[dependencies]
+aether-http = { path = "../http" }
+aether-router = { path = "../router" }
+aether-scheduler = { path = "../scheduler" }
+criterion.workspace = true
+
+[[bench]]
+name = "router_bench"
+harness = false
