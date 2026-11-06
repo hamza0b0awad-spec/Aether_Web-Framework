@@ -1,0 +1,32 @@
+[package]
+name = "aether-tests"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+
+[dependencies]
+aether = { path = "../aether" }
+aether-core = { path = "../core" }
+aether-http = { path = "../http" }
+aether-router = { path = "../router" }
+aether-validation = { path = "../validation" }
+tokio.workspace = true
+bytes.workspace = true
+serde.workspace = true
+serde_json = "1.0"
+
+[dev-dependencies]
+# The TLS wire tests need a *client*: rustls to shake hands with the server, and rcgen to mint
+# a throwaway CA so no key material is committed.
+rustls = { version = "0.23", default-features = false, features = ["ring", "std", "tls12"] }
+tokio-rustls = { version = "0.26", default-features = false, features = ["ring", "tls12"] }
+rcgen = { version = "0.14", default-features = false, features = ["ring", "pem"] }
+# The HTTP/2 wire tests need a client that speaks the protocol. `h2`'s client side is that, and
+# `http` is the type vocabulary it exchanges. This does not make the server's own h2 usage
+# self-confirming: every assertion in `http2_e2e.rs` is about what the *server* answers, and the
+# independent-implementation check (Node.js `http2`) is recorded separately in the docs.
+h2 = "0.4.20"
+# `bearer_auth.rs` mints its test tokens with the same HMAC the server verifies with;
+# the server itself never signs, so this stays out of the runtime dependency graph.
+ring.workspace = true
+http = "1"
