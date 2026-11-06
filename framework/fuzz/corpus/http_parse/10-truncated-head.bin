@@ -1,0 +1,3 @@
+GET /trunc HTTP/1.1
+Host: h
+Accept: text/
