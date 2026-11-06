@@ -1,0 +1,1043 @@
+== connection 0 id=0
+   admitted = [JobId(0)]
+   grants   = []
+   capacity = None
+   metrics  = admitted=1 completed=0 cancelled=0 rejected_q=0 rejected_m=0 starve=0 promo=0 demo=0 grants=0 slices=0 work=0 peak_q=1 skip=0 halt=0 shed=0
+   res      = conn=1 hnd=0 cpu=0 div=0 slots=4 mem=32768 avail=1015808
+   queued   = []
+   baseline = 100
+   decision t=1µs job=0 Queued
+   decision t=1µs job=0 Admitted
+== connection 1 id=1
+   admitted = [JobId(1)]
+   grants   = []
+   capacity = None
+   metrics  = admitted=2 completed=0 cancelled=0 rejected_q=0 rejected_m=0 starve=0 promo=0 demo=0 grants=0 slices=0 work=0 peak_q=1 skip=0 halt=0 shed=0
+   res      = conn=2 hnd=0 cpu=0 div=0 slots=4 mem=65536 avail=983040
+   queued   = []
+   baseline = 100
+   decision t=1µs job=0 Queued
+   decision t=1µs job=0 Admitted
+   decision t=2µs job=1 Queued
+   decision t=2µs job=1 Admitted
+== connection 2 id=2
+   admitted = [JobId(2)]
+   grants   = []
+   capacity = None
+   metrics  = admitted=3 completed=0 cancelled=0 rejected_q=0 rejected_m=0 starve=0 promo=0 demo=0 grants=0 slices=0 work=0 peak_q=1 skip=0 halt=0 shed=0
+   res      = conn=3 hnd=0 cpu=0 div=0 slots=4 mem=98304 avail=950272
+   queued   = []
+   baseline = 100
+   decision t=1µs job=0 Queued
+   decision t=1µs job=0 Admitted
+   decision t=2µs job=1 Queued
+   decision t=2µs job=1 Admitted
+   decision t=3µs job=2 Queued
+   decision t=3µs job=2 Admitted
+== connection 3 id=3
+   admitted = [JobId(3)]
+   grants   = []
+   capacity = None
+   metrics  = admitted=4 completed=0 cancelled=0 rejected_q=0 rejected_m=0 starve=0 promo=0 demo=0 grants=0 slices=0 work=0 peak_q=1 skip=0 halt=0 shed=0
+   res      = conn=4 hnd=0 cpu=0 div=0 slots=4 mem=131072 avail=917504
+   queued   = []
+   baseline = 100
+   decision t=1µs job=0 Queued
+   decision t=1µs job=0 Admitted
+   decision t=2µs job=1 Queued
+   decision t=2µs job=1 Admitted
+   decision t=3µs job=2 Queued
+   decision t=3µs job=2 Admitted
+   decision t=4µs job=3 Queued
+   decision t=4µs job=3 Admitted
+== divisible id=4
+   admitted = [JobId(4)]
+   grants   = [(4, 100)]
+   capacity = None
+   metrics  = admitted=5 completed=0 cancelled=0 rejected_q=0 rejected_m=0 starve=0 promo=1 demo=0 grants=1 slices=0 work=0 peak_q=1 skip=0 halt=0 shed=0
+   res      = conn=4 hnd=0 cpu=0 div=1 slots=4 mem=139264 avail=909312
+   queued   = []
+   baseline = 100
+   decision t=1µs job=0 Queued
+   decision t=1µs job=0 Admitted
+   decision t=2µs job=1 Queued
+   decision t=2µs job=1 Admitted
+   decision t=3µs job=2 Queued
+   decision t=3µs job=2 Admitted
+   decision t=4µs job=3 Queued
+   decision t=4µs job=3 Admitted
+   decision t=5µs job=4 Queued
+   decision t=5µs job=4 Reclassified { from: Unknown, to: Large }
+   decision t=5µs job=4 Admitted
+   decision t=5µs job=4 Quota { work: 100 }
+-- slice 0 report 100 at t=10µs
+== divisible slice 0 grant=Some(100)
+   admitted = []
+   grants   = [(4, 100)]
+   capacity = None
+   metrics  = admitted=5 completed=0 cancelled=0 rejected_q=0 rejected_m=0 starve=0 promo=1 demo=0 grants=2 slices=1 work=100 peak_q=1 skip=0 halt=0 shed=0
+   res      = conn=4 hnd=0 cpu=0 div=1 slots=4 mem=139264 avail=909312
+   queued   = []
+   baseline = 100
+   decision t=1µs job=0 Queued
+   decision t=1µs job=0 Admitted
+   decision t=2µs job=1 Queued
+   decision t=2µs job=1 Admitted
+   decision t=3µs job=2 Queued
+   decision t=3µs job=2 Admitted
+   decision t=4µs job=3 Queued
+   decision t=4µs job=3 Admitted
+   decision t=5µs job=4 Queued
+   decision t=5µs job=4 Reclassified { from: Unknown, to: Large }
+   decision t=5µs job=4 Admitted
+   decision t=5µs job=4 Quota { work: 100 }
+   decision t=10µs job=4 Quota { work: 100 }
+-- slice 1 report 400 at t=15µs
+== divisible slice 1 grant=Some(400)
+   admitted = []
+   grants   = [(4, 400)]
+   capacity = None
+   metrics  = admitted=5 completed=0 cancelled=0 rejected_q=0 rejected_m=0 starve=0 promo=1 demo=0 grants=3 slices=2 work=500 peak_q=1 skip=0 halt=0 shed=0
+   res      = conn=4 hnd=0 cpu=0 div=1 slots=4 mem=139264 avail=909312
+   queued   = []
+   baseline = 100
+   decision t=1µs job=0 Queued
+   decision t=1µs job=0 Admitted
+   decision t=2µs job=1 Queued
+   decision t=2µs job=1 Admitted
+   decision t=3µs job=2 Queued
+   decision t=3µs job=2 Admitted
+   decision t=4µs job=3 Queued
+   decision t=4µs job=3 Admitted
+   decision t=5µs job=4 Queued
+   decision t=5µs job=4 Reclassified { from: Unknown, to: Large }
+   decision t=5µs job=4 Admitted
+   decision t=5µs job=4 Quota { work: 100 }
+   decision t=10µs job=4 Quota { work: 100 }
+   decision t=15µs job=4 Quota { work: 400 }
+-- slice 2 report 400 at t=20µs
+== divisible slice 2 grant=Some(400)
+   admitted = []
+   grants   = [(4, 400)]
+   capacity = None
+   metrics  = admitted=5 completed=0 cancelled=0 rejected_q=0 rejected_m=0 starve=0 promo=1 demo=0 grants=4 slices=3 work=900 peak_q=1 skip=0 halt=0 shed=0
+   res      = conn=4 hnd=0 cpu=0 div=1 slots=4 mem=139264 avail=909312
+   queued   = []
+   baseline = 100
+   decision t=1µs job=0 Queued
+   decision t=1µs job=0 Admitted
+   decision t=2µs job=1 Queued
+   decision t=2µs job=1 Admitted
+   decision t=3µs job=2 Queued
+   decision t=3µs job=2 Admitted
+   decision t=4µs job=3 Queued
+   decision t=4µs job=3 Admitted
+   decision t=5µs job=4 Queued
+   decision t=5µs job=4 Reclassified { from: Unknown, to: Large }
+   decision t=5µs job=4 Admitted
+   decision t=5µs job=4 Quota { work: 100 }
+   decision t=10µs job=4 Quota { work: 100 }
+   decision t=15µs job=4 Quota { work: 400 }
+   decision t=20µs job=4 Quota { work: 400 }
+-- slice 3 report 400 at t=25µs
+== divisible slice 3 grant=Some(400)
+   admitted = []
+   grants   = [(4, 400)]
+   capacity = None
+   metrics  = admitted=5 completed=0 cancelled=0 rejected_q=0 rejected_m=0 starve=0 promo=1 demo=0 grants=5 slices=4 work=1300 peak_q=1 skip=0 halt=0 shed=0
+   res      = conn=4 hnd=0 cpu=0 div=1 slots=4 mem=139264 avail=909312
+   queued   = []
+   baseline = 100
+   decision t=1µs job=0 Queued
+   decision t=1µs job=0 Admitted
+   decision t=2µs job=1 Queued
+   decision t=2µs job=1 Admitted
+   decision t=3µs job=2 Queued
+   decision t=3µs job=2 Admitted
+   decision t=4µs job=3 Queued
+   decision t=4µs job=3 Admitted
+   decision t=5µs job=4 Queued
+   decision t=5µs job=4 Reclassified { from: Unknown, to: Large }
+   decision t=5µs job=4 Admitted
+   decision t=5µs job=4 Quota { work: 100 }
+   decision t=10µs job=4 Quota { work: 100 }
+   decision t=15µs job=4 Quota { work: 400 }
+   decision t=20µs job=4 Quota { work: 400 }
+   decision t=25µs job=4 Quota { work: 400 }
+-- slice 4 report 400 at t=30µs
+== divisible slice 4 grant=Some(400)
+   admitted = []
+   grants   = [(4, 400)]
+   capacity = None
+   metrics  = admitted=5 completed=0 cancelled=0 rejected_q=0 rejected_m=0 starve=0 promo=1 demo=0 grants=6 slices=5 work=1700 peak_q=1 skip=0 halt=0 shed=0
+   res      = conn=4 hnd=0 cpu=0 div=1 slots=4 mem=139264 avail=909312
+   queued   = []
+   baseline = 100
+   decision t=1µs job=0 Queued
+   decision t=1µs job=0 Admitted
+   decision t=2µs job=1 Queued
+   decision t=2µs job=1 Admitted
+   decision t=3µs job=2 Queued
+   decision t=3µs job=2 Admitted
+   decision t=4µs job=3 Queued
+   decision t=4µs job=3 Admitted
+   decision t=5µs job=4 Queued
+   decision t=5µs job=4 Reclassified { from: Unknown, to: Large }
+   decision t=5µs job=4 Admitted
+   decision t=5µs job=4 Quota { work: 100 }
+   decision t=10µs job=4 Quota { work: 100 }
+   decision t=15µs job=4 Quota { work: 400 }
+   decision t=20µs job=4 Quota { work: 400 }
+   decision t=25µs job=4 Quota { work: 400 }
+   decision t=30µs job=4 Quota { work: 400 }
+-- slice 5 report 400 at t=35µs
+== divisible slice 5 grant=Some(400)
+   admitted = []
+   grants   = [(4, 400)]
+   capacity = None
+   metrics  = admitted=5 completed=0 cancelled=0 rejected_q=0 rejected_m=0 starve=0 promo=1 demo=0 grants=7 slices=6 work=2100 peak_q=1 skip=0 halt=0 shed=0
+   res      = conn=4 hnd=0 cpu=0 div=1 slots=4 mem=139264 avail=909312
+   queued   = []
+   baseline = 100
+   decision t=1µs job=0 Queued
+   decision t=1µs job=0 Admitted
+   decision t=2µs job=1 Queued
+   decision t=2µs job=1 Admitted
+   decision t=3µs job=2 Queued
+   decision t=3µs job=2 Admitted
+   decision t=4µs job=3 Queued
+   decision t=4µs job=3 Admitted
+   decision t=5µs job=4 Queued
+   decision t=5µs job=4 Reclassified { from: Unknown, to: Large }
+   decision t=5µs job=4 Admitted
+   decision t=5µs job=4 Quota { work: 100 }
+   decision t=10µs job=4 Quota { work: 100 }
+   decision t=15µs job=4 Quota { work: 400 }
+   decision t=20µs job=4 Quota { work: 400 }
+   decision t=25µs job=4 Quota { work: 400 }
+   decision t=30µs job=4 Quota { work: 400 }
+   decision t=35µs job=4 Quota { work: 400 }
+== divisible completed
+   admitted = []
+   grants   = []
+   capacity = None
+   metrics  = admitted=5 completed=1 cancelled=0 rejected_q=0 rejected_m=0 starve=0 promo=1 demo=0 grants=7 slices=6 work=100000 peak_q=1 skip=0 halt=0 shed=0
+   res      = conn=4 hnd=0 cpu=0 div=0 slots=4 mem=131072 avail=917504
+   queued   = []
+   baseline = 100
+   decision t=1µs job=0 Queued
+   decision t=1µs job=0 Admitted
+   decision t=2µs job=1 Queued
+   decision t=2µs job=1 Admitted
+   decision t=3µs job=2 Queued
+   decision t=3µs job=2 Admitted
+   decision t=4µs job=3 Queued
+   decision t=4µs job=3 Admitted
+   decision t=5µs job=4 Queued
+   decision t=5µs job=4 Reclassified { from: Unknown, to: Large }
+   decision t=5µs job=4 Admitted
+   decision t=5µs job=4 Quota { work: 100 }
+   decision t=10µs job=4 Quota { work: 100 }
+   decision t=15µs job=4 Quota { work: 400 }
+   decision t=20µs job=4 Quota { work: 400 }
+   decision t=25µs job=4 Quota { work: 400 }
+   decision t=30µs job=4 Quota { work: 400 }
+   decision t=35µs job=4 Quota { work: 400 }
+   decision t=36µs job=4 Completed
+== handler+cpu admitted h=5 6 7
+   admitted = [JobId(5), JobId(6), JobId(7)]
+   grants   = []
+   capacity = None
+   metrics  = admitted=8 completed=1 cancelled=0 rejected_q=0 rejected_m=0 starve=0 promo=1 demo=0 grants=7 slices=6 work=100000 peak_q=3 skip=0 halt=0 shed=0
+   res      = conn=4 hnd=2 cpu=1 div=0 slots=4 mem=180224 avail=868352
+   queued   = []
+   baseline = 100
+   decision t=1µs job=0 Queued
+   decision t=1µs job=0 Admitted
+   decision t=2µs job=1 Queued
+   decision t=2µs job=1 Admitted
+   decision t=3µs job=2 Queued
+   decision t=3µs job=2 Admitted
+   decision t=4µs job=3 Queued
+   decision t=4µs job=3 Admitted
+   decision t=5µs job=4 Queued
+   decision t=5µs job=4 Reclassified { from: Unknown, to: Large }
+   decision t=5µs job=4 Admitted
+   decision t=5µs job=4 Quota { work: 100 }
+   decision t=10µs job=4 Quota { work: 100 }
+   decision t=15µs job=4 Quota { work: 400 }
+   decision t=20µs job=4 Quota { work: 400 }
+   decision t=25µs job=4 Quota { work: 400 }
+   decision t=30µs job=4 Quota { work: 400 }
+   decision t=35µs job=4 Quota { work: 400 }
+   decision t=36µs job=4 Completed
+   decision t=37µs job=5 Queued
+   decision t=37µs job=6 Queued
+   decision t=37µs job=7 Queued
+   decision t=37µs job=5 Admitted
+   decision t=37µs job=6 Admitted
+   decision t=37µs job=7 Admitted
+== handler cancelled
+   admitted = []
+   grants   = []
+   capacity = None
+   metrics  = admitted=8 completed=1 cancelled=1 rejected_q=0 rejected_m=0 starve=0 promo=1 demo=0 grants=7 slices=6 work=100000 peak_q=3 skip=0 halt=0 shed=0
+   res      = conn=4 hnd=1 cpu=1 div=0 slots=4 mem=163840 avail=884736
+   queued   = []
+   baseline = 100
+   decision t=1µs job=0 Queued
+   decision t=1µs job=0 Admitted
+   decision t=2µs job=1 Queued
+   decision t=2µs job=1 Admitted
+   decision t=3µs job=2 Queued
+   decision t=3µs job=2 Admitted
+   decision t=4µs job=3 Queued
+   decision t=4µs job=3 Admitted
+   decision t=5µs job=4 Queued
+   decision t=5µs job=4 Reclassified { from: Unknown, to: Large }
+   decision t=5µs job=4 Admitted
+   decision t=5µs job=4 Quota { work: 100 }
+   decision t=10µs job=4 Quota { work: 100 }
+   decision t=15µs job=4 Quota { work: 400 }
+   decision t=20µs job=4 Quota { work: 400 }
+   decision t=25µs job=4 Quota { work: 400 }
+   decision t=30µs job=4 Quota { work: 400 }
+   decision t=35µs job=4 Quota { work: 400 }
+   decision t=36µs job=4 Completed
+   decision t=37µs job=5 Queued
+   decision t=37µs job=6 Queued
+   decision t=37µs job=7 Queued
+   decision t=37µs job=5 Admitted
+   decision t=37µs job=6 Admitted
+   decision t=37µs job=7 Admitted
+   decision t=39µs job=5 Cancelled
+== deep queue loaded
+   admitted = [JobId(8), JobId(9), JobId(10), JobId(11)]
+   grants   = []
+   capacity = None
+   metrics  = admitted=12 completed=1 cancelled=1 rejected_q=0 rejected_m=0 starve=0 promo=1 demo=0 grants=7 slices=6 work=100000 peak_q=40 skip=28 halt=1 shed=0
+   res      = conn=8 hnd=1 cpu=1 div=0 slots=4 mem=434176 avail=614400
+   queued   = [12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47]
+   baseline = 100
+   decision t=1µs job=0 Queued
+   decision t=1µs job=0 Admitted
+   decision t=2µs job=1 Queued
+   decision t=2µs job=1 Admitted
+   decision t=3µs job=2 Queued
+   decision t=3µs job=2 Admitted
+   decision t=4µs job=3 Queued
+   decision t=4µs job=3 Admitted
+   decision t=5µs job=4 Queued
+   decision t=5µs job=4 Reclassified { from: Unknown, to: Large }
+   decision t=5µs job=4 Admitted
+   decision t=5µs job=4 Quota { work: 100 }
+   decision t=10µs job=4 Quota { work: 100 }
+   decision t=15µs job=4 Quota { work: 400 }
+   decision t=20µs job=4 Quota { work: 400 }
+   decision t=25µs job=4 Quota { work: 400 }
+   decision t=30µs job=4 Quota { work: 400 }
+   decision t=35µs job=4 Quota { work: 400 }
+   decision t=36µs job=4 Completed
+   decision t=37µs job=5 Queued
+   decision t=37µs job=6 Queued
+   decision t=37µs job=7 Queued
+   decision t=37µs job=5 Admitted
+   decision t=37µs job=6 Admitted
+   decision t=37µs job=7 Admitted
+   decision t=39µs job=5 Cancelled
+   decision t=39.5µs job=8 Queued
+   decision t=40µs job=9 Queued
+   decision t=40.5µs job=10 Queued
+   decision t=41µs job=11 Queued
+   decision t=41.5µs job=12 Queued
+   decision t=42µs job=13 Queued
+   decision t=42.5µs job=14 Queued
+   decision t=43µs job=15 Queued
+   decision t=43.5µs job=16 Queued
+   decision t=44µs job=17 Queued
+   decision t=44.5µs job=18 Queued
+   decision t=45µs job=19 Queued
+   decision t=45.5µs job=20 Queued
+   decision t=46µs job=21 Queued
+   decision t=46.5µs job=22 Queued
+   decision t=47µs job=23 Queued
+   decision t=47.5µs job=24 Queued
+   decision t=48µs job=25 Queued
+   decision t=48.5µs job=26 Queued
+   decision t=49µs job=27 Queued
+   decision t=49.5µs job=28 Queued
+   decision t=50µs job=29 Queued
+   decision t=50.5µs job=30 Queued
+   decision t=51µs job=31 Queued
+   decision t=51.5µs job=32 Queued
+   decision t=52µs job=33 Queued
+   decision t=52.5µs job=34 Queued
+   decision t=53µs job=35 Queued
+   decision t=53.5µs job=36 Queued
+   decision t=54µs job=37 Queued
+   decision t=54.5µs job=38 Queued
+   decision t=55µs job=39 Queued
+   decision t=55.5µs job=40 Queued
+   decision t=56µs job=41 Queued
+   decision t=56.5µs job=42 Queued
+   decision t=57µs job=43 Queued
+   decision t=57.5µs job=44 Queued
+   decision t=58µs job=45 Queued
+   decision t=58.5µs job=46 Queued
+   decision t=59µs job=47 Queued
+   decision t=59µs job=8 Admitted
+   decision t=59µs job=9 Admitted
+   decision t=59µs job=10 Admitted
+   decision t=59µs job=11 Admitted
+== released connection 8
+   admitted = [JobId(44)]
+   grants   = []
+   capacity = None
+   metrics  = admitted=13 completed=2 cancelled=1 rejected_q=0 rejected_m=0 starve=0 promo=1 demo=0 grants=7 slices=6 work=100000 peak_q=40 skip=59 halt=2 shed=0
+   res      = conn=8 hnd=1 cpu=1 div=0 slots=4 mem=434176 avail=614400
+   queued   = [12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 45, 46, 47]
+   baseline = 100
+   decision t=1µs job=0 Queued
+   decision t=1µs job=0 Admitted
+   decision t=2µs job=1 Queued
+   decision t=2µs job=1 Admitted
+   decision t=3µs job=2 Queued
+   decision t=3µs job=2 Admitted
+   decision t=4µs job=3 Queued
+   decision t=4µs job=3 Admitted
+   decision t=5µs job=4 Queued
+   decision t=5µs job=4 Reclassified { from: Unknown, to: Large }
+   decision t=5µs job=4 Admitted
+   decision t=5µs job=4 Quota { work: 100 }
+   decision t=10µs job=4 Quota { work: 100 }
+   decision t=15µs job=4 Quota { work: 400 }
+   decision t=20µs job=4 Quota { work: 400 }
+   decision t=25µs job=4 Quota { work: 400 }
+   decision t=30µs job=4 Quota { work: 400 }
+   decision t=35µs job=4 Quota { work: 400 }
+   decision t=36µs job=4 Completed
+   decision t=37µs job=5 Queued
+   decision t=37µs job=6 Queued
+   decision t=37µs job=7 Queued
+   decision t=37µs job=5 Admitted
+   decision t=37µs job=6 Admitted
+   decision t=37µs job=7 Admitted
+   decision t=39µs job=5 Cancelled
+   decision t=39.5µs job=8 Queued
+   decision t=40µs job=9 Queued
+   decision t=40.5µs job=10 Queued
+   decision t=41µs job=11 Queued
+   decision t=41.5µs job=12 Queued
+   decision t=42µs job=13 Queued
+   decision t=42.5µs job=14 Queued
+   decision t=43µs job=15 Queued
+   decision t=43.5µs job=16 Queued
+   decision t=44µs job=17 Queued
+   decision t=44.5µs job=18 Queued
+   decision t=45µs job=19 Queued
+   decision t=45.5µs job=20 Queued
+   decision t=46µs job=21 Queued
+   decision t=46.5µs job=22 Queued
+   decision t=47µs job=23 Queued
+   decision t=47.5µs job=24 Queued
+   decision t=48µs job=25 Queued
+   decision t=48.5µs job=26 Queued
+   decision t=49µs job=27 Queued
+   decision t=49.5µs job=28 Queued
+   decision t=50µs job=29 Queued
+   decision t=50.5µs job=30 Queued
+   decision t=51µs job=31 Queued
+   decision t=51.5µs job=32 Queued
+   decision t=52µs job=33 Queued
+   decision t=52.5µs job=34 Queued
+   decision t=53µs job=35 Queued
+   decision t=53.5µs job=36 Queued
+   decision t=54µs job=37 Queued
+   decision t=54.5µs job=38 Queued
+   decision t=55µs job=39 Queued
+   decision t=55.5µs job=40 Queued
+   decision t=56µs job=41 Queued
+   decision t=56.5µs job=42 Queued
+   decision t=57µs job=43 Queued
+   decision t=57.5µs job=44 Queued
+   decision t=58µs job=45 Queued
+   decision t=58.5µs job=46 Queued
+   decision t=59µs job=47 Queued
+   decision t=59µs job=8 Admitted
+   decision t=59µs job=9 Admitted
+   decision t=59µs job=10 Admitted
+   decision t=59µs job=11 Admitted
+   decision t=60µs job=8 Completed
+   decision t=60µs job=44 Admitted
+== released connection 9
+   admitted = [JobId(40)]
+   grants   = []
+   capacity = None
+   metrics  = admitted=14 completed=3 cancelled=1 rejected_q=0 rejected_m=0 starve=0 promo=1 demo=0 grants=7 slices=6 work=100000 peak_q=40 skip=90 halt=3 shed=0
+   res      = conn=8 hnd=1 cpu=1 div=0 slots=4 mem=434176 avail=614400
+   queued   = [12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 41, 42, 43, 45, 46, 47]
+   baseline = 100
+   decision t=1µs job=0 Queued
+   decision t=1µs job=0 Admitted
+   decision t=2µs job=1 Queued
+   decision t=2µs job=1 Admitted
+   decision t=3µs job=2 Queued
+   decision t=3µs job=2 Admitted
+   decision t=4µs job=3 Queued
+   decision t=4µs job=3 Admitted
+   decision t=5µs job=4 Queued
+   decision t=5µs job=4 Reclassified { from: Unknown, to: Large }
+   decision t=5µs job=4 Admitted
+   decision t=5µs job=4 Quota { work: 100 }
+   decision t=10µs job=4 Quota { work: 100 }
+   decision t=15µs job=4 Quota { work: 400 }
+   decision t=20µs job=4 Quota { work: 400 }
+   decision t=25µs job=4 Quota { work: 400 }
+   decision t=30µs job=4 Quota { work: 400 }
+   decision t=35µs job=4 Quota { work: 400 }
+   decision t=36µs job=4 Completed
+   decision t=37µs job=5 Queued
+   decision t=37µs job=6 Queued
+   decision t=37µs job=7 Queued
+   decision t=37µs job=5 Admitted
+   decision t=37µs job=6 Admitted
+   decision t=37µs job=7 Admitted
+   decision t=39µs job=5 Cancelled
+   decision t=39.5µs job=8 Queued
+   decision t=40µs job=9 Queued
+   decision t=40.5µs job=10 Queued
+   decision t=41µs job=11 Queued
+   decision t=41.5µs job=12 Queued
+   decision t=42µs job=13 Queued
+   decision t=42.5µs job=14 Queued
+   decision t=43µs job=15 Queued
+   decision t=43.5µs job=16 Queued
+   decision t=44µs job=17 Queued
+   decision t=44.5µs job=18 Queued
+   decision t=45µs job=19 Queued
+   decision t=45.5µs job=20 Queued
+   decision t=46µs job=21 Queued
+   decision t=46.5µs job=22 Queued
+   decision t=47µs job=23 Queued
+   decision t=47.5µs job=24 Queued
+   decision t=48µs job=25 Queued
+   decision t=48.5µs job=26 Queued
+   decision t=49µs job=27 Queued
+   decision t=49.5µs job=28 Queued
+   decision t=50µs job=29 Queued
+   decision t=50.5µs job=30 Queued
+   decision t=51µs job=31 Queued
+   decision t=51.5µs job=32 Queued
+   decision t=52µs job=33 Queued
+   decision t=52.5µs job=34 Queued
+   decision t=53µs job=35 Queued
+   decision t=53.5µs job=36 Queued
+   decision t=54µs job=37 Queued
+   decision t=54.5µs job=38 Queued
+   decision t=55µs job=39 Queued
+   decision t=55.5µs job=40 Queued
+   decision t=56µs job=41 Queued
+   decision t=56.5µs job=42 Queued
+   decision t=57µs job=43 Queued
+   decision t=57.5µs job=44 Queued
+   decision t=58µs job=45 Queued
+   decision t=58.5µs job=46 Queued
+   decision t=59µs job=47 Queued
+   decision t=59µs job=8 Admitted
+   decision t=59µs job=9 Admitted
+   decision t=59µs job=10 Admitted
+   decision t=59µs job=11 Admitted
+   decision t=60µs job=8 Completed
+   decision t=60µs job=44 Admitted
+   decision t=61µs job=9 Completed
+   decision t=61µs job=40 Admitted
+== released connection 10
+   admitted = [JobId(37)]
+   grants   = []
+   capacity = None
+   metrics  = admitted=15 completed=4 cancelled=1 rejected_q=0 rejected_m=0 starve=0 promo=1 demo=0 grants=7 slices=6 work=100000 peak_q=40 skip=121 halt=4 shed=0
+   res      = conn=8 hnd=1 cpu=1 div=0 slots=4 mem=434176 avail=614400
+   queued   = [12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 38, 39, 41, 42, 43, 45, 46, 47]
+   baseline = 100
+   decision t=1µs job=0 Queued
+   decision t=1µs job=0 Admitted
+   decision t=2µs job=1 Queued
+   decision t=2µs job=1 Admitted
+   decision t=3µs job=2 Queued
+   decision t=3µs job=2 Admitted
+   decision t=4µs job=3 Queued
+   decision t=4µs job=3 Admitted
+   decision t=5µs job=4 Queued
+   decision t=5µs job=4 Reclassified { from: Unknown, to: Large }
+   decision t=5µs job=4 Admitted
+   decision t=5µs job=4 Quota { work: 100 }
+   decision t=10µs job=4 Quota { work: 100 }
+   decision t=15µs job=4 Quota { work: 400 }
+   decision t=20µs job=4 Quota { work: 400 }
+   decision t=25µs job=4 Quota { work: 400 }
+   decision t=30µs job=4 Quota { work: 400 }
+   decision t=35µs job=4 Quota { work: 400 }
+   decision t=36µs job=4 Completed
+   decision t=37µs job=5 Queued
+   decision t=37µs job=6 Queued
+   decision t=37µs job=7 Queued
+   decision t=37µs job=5 Admitted
+   decision t=37µs job=6 Admitted
+   decision t=37µs job=7 Admitted
+   decision t=39µs job=5 Cancelled
+   decision t=39.5µs job=8 Queued
+   decision t=40µs job=9 Queued
+   decision t=40.5µs job=10 Queued
+   decision t=41µs job=11 Queued
+   decision t=41.5µs job=12 Queued
+   decision t=42µs job=13 Queued
+   decision t=42.5µs job=14 Queued
+   decision t=43µs job=15 Queued
+   decision t=43.5µs job=16 Queued
+   decision t=44µs job=17 Queued
+   decision t=44.5µs job=18 Queued
+   decision t=45µs job=19 Queued
+   decision t=45.5µs job=20 Queued
+   decision t=46µs job=21 Queued
+   decision t=46.5µs job=22 Queued
+   decision t=47µs job=23 Queued
+   decision t=47.5µs job=24 Queued
+   decision t=48µs job=25 Queued
+   decision t=48.5µs job=26 Queued
+   decision t=49µs job=27 Queued
+   decision t=49.5µs job=28 Queued
+   decision t=50µs job=29 Queued
+   decision t=50.5µs job=30 Queued
+   decision t=51µs job=31 Queued
+   decision t=51.5µs job=32 Queued
+   decision t=52µs job=33 Queued
+   decision t=52.5µs job=34 Queued
+   decision t=53µs job=35 Queued
+   decision t=53.5µs job=36 Queued
+   decision t=54µs job=37 Queued
+   decision t=54.5µs job=38 Queued
+   decision t=55µs job=39 Queued
+   decision t=55.5µs job=40 Queued
+   decision t=56µs job=41 Queued
+   decision t=56.5µs job=42 Queued
+   decision t=57µs job=43 Queued
+   decision t=57.5µs job=44 Queued
+   decision t=58µs job=45 Queued
+   decision t=58.5µs job=46 Queued
+   decision t=59µs job=47 Queued
+   decision t=59µs job=8 Admitted
+   decision t=59µs job=9 Admitted
+   decision t=59µs job=10 Admitted
+   decision t=59µs job=11 Admitted
+   decision t=60µs job=8 Completed
+   decision t=60µs job=44 Admitted
+   decision t=61µs job=9 Completed
+   decision t=61µs job=40 Admitted
+   decision t=62µs job=10 Completed
+   decision t=62µs job=37 Admitted
+== freed + starvation jump, one pump
+   admitted = [JobId(35), JobId(36), JobId(38), JobId(39)]
+   grants   = []
+   capacity = None
+   metrics  = admitted=19 completed=4 cancelled=7 rejected_q=0 rejected_m=0 starve=4 promo=1 demo=0 grants=7 slices=6 work=100000 peak_q=40 skip=149 halt=5 shed=0
+   res      = conn=8 hnd=0 cpu=0 div=0 slots=4 mem=540672 avail=507904
+   queued   = [12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 41, 42, 43, 45, 46, 47]
+   baseline = 100
+   decision t=1µs job=0 Queued
+   decision t=1µs job=0 Admitted
+   decision t=2µs job=1 Queued
+   decision t=2µs job=1 Admitted
+   decision t=3µs job=2 Queued
+   decision t=3µs job=2 Admitted
+   decision t=4µs job=3 Queued
+   decision t=4µs job=3 Admitted
+   decision t=5µs job=4 Queued
+   decision t=5µs job=4 Reclassified { from: Unknown, to: Large }
+   decision t=5µs job=4 Admitted
+   decision t=5µs job=4 Quota { work: 100 }
+   decision t=10µs job=4 Quota { work: 100 }
+   decision t=15µs job=4 Quota { work: 400 }
+   decision t=20µs job=4 Quota { work: 400 }
+   decision t=25µs job=4 Quota { work: 400 }
+   decision t=30µs job=4 Quota { work: 400 }
+   decision t=35µs job=4 Quota { work: 400 }
+   decision t=36µs job=4 Completed
+   decision t=37µs job=5 Queued
+   decision t=37µs job=6 Queued
+   decision t=37µs job=7 Queued
+   decision t=37µs job=5 Admitted
+   decision t=37µs job=6 Admitted
+   decision t=37µs job=7 Admitted
+   decision t=39µs job=5 Cancelled
+   decision t=39.5µs job=8 Queued
+   decision t=40µs job=9 Queued
+   decision t=40.5µs job=10 Queued
+   decision t=41µs job=11 Queued
+   decision t=41.5µs job=12 Queued
+   decision t=42µs job=13 Queued
+   decision t=42.5µs job=14 Queued
+   decision t=43µs job=15 Queued
+   decision t=43.5µs job=16 Queued
+   decision t=44µs job=17 Queued
+   decision t=44.5µs job=18 Queued
+   decision t=45µs job=19 Queued
+   decision t=45.5µs job=20 Queued
+   decision t=46µs job=21 Queued
+   decision t=46.5µs job=22 Queued
+   decision t=47µs job=23 Queued
+   decision t=47.5µs job=24 Queued
+   decision t=48µs job=25 Queued
+   decision t=48.5µs job=26 Queued
+   decision t=49µs job=27 Queued
+   decision t=49.5µs job=28 Queued
+   decision t=50µs job=29 Queued
+   decision t=50.5µs job=30 Queued
+   decision t=51µs job=31 Queued
+   decision t=51.5µs job=32 Queued
+   decision t=52µs job=33 Queued
+   decision t=52.5µs job=34 Queued
+   decision t=53µs job=35 Queued
+   decision t=53.5µs job=36 Queued
+   decision t=54µs job=37 Queued
+   decision t=54.5µs job=38 Queued
+   decision t=55µs job=39 Queued
+   decision t=55.5µs job=40 Queued
+   decision t=56µs job=41 Queued
+   decision t=56.5µs job=42 Queued
+   decision t=57µs job=43 Queued
+   decision t=57.5µs job=44 Queued
+   decision t=58µs job=45 Queued
+   decision t=58.5µs job=46 Queued
+   decision t=59µs job=47 Queued
+   decision t=59µs job=8 Admitted
+   decision t=59µs job=9 Admitted
+   decision t=59µs job=10 Admitted
+   decision t=59µs job=11 Admitted
+   decision t=60µs job=8 Completed
+   decision t=60µs job=44 Admitted
+   decision t=61µs job=9 Completed
+   decision t=61µs job=40 Admitted
+   decision t=62µs job=10 Completed
+   decision t=62µs job=37 Admitted
+   decision t=63µs job=0 Cancelled
+   decision t=63µs job=1 Cancelled
+   decision t=63µs job=2 Cancelled
+   decision t=63µs job=3 Cancelled
+   decision t=63µs job=6 Cancelled
+   decision t=63µs job=7 Cancelled
+   decision t=3.000063s job=35 StarvationPromoted
+   decision t=3.000063s job=35 Admitted
+   decision t=3.000063s job=36 StarvationPromoted
+   decision t=3.000063s job=36 Admitted
+   decision t=3.000063s job=38 StarvationPromoted
+   decision t=3.000063s job=38 Admitted
+   decision t=3.000063s job=39 StarvationPromoted
+   decision t=3.000063s job=39 Admitted
+== final
+   admitted = []
+   grants   = []
+   capacity = None
+   metrics  = admitted=19 completed=4 cancelled=44 rejected_q=0 rejected_m=0 starve=4 promo=1 demo=0 grants=7 slices=6 work=100000 peak_q=40 skip=149 halt=5 shed=0
+   res      = conn=0 hnd=0 cpu=0 div=0 slots=4 mem=0 avail=1048576
+   queued   = []
+   baseline = 100
+   decision t=1µs job=0 Queued
+   decision t=1µs job=0 Admitted
+   decision t=2µs job=1 Queued
+   decision t=2µs job=1 Admitted
+   decision t=3µs job=2 Queued
+   decision t=3µs job=2 Admitted
+   decision t=4µs job=3 Queued
+   decision t=4µs job=3 Admitted
+   decision t=5µs job=4 Queued
+   decision t=5µs job=4 Reclassified { from: Unknown, to: Large }
+   decision t=5µs job=4 Admitted
+   decision t=5µs job=4 Quota { work: 100 }
+   decision t=10µs job=4 Quota { work: 100 }
+   decision t=15µs job=4 Quota { work: 400 }
+   decision t=20µs job=4 Quota { work: 400 }
+   decision t=25µs job=4 Quota { work: 400 }
+   decision t=30µs job=4 Quota { work: 400 }
+   decision t=35µs job=4 Quota { work: 400 }
+   decision t=36µs job=4 Completed
+   decision t=37µs job=5 Queued
+   decision t=37µs job=6 Queued
+   decision t=37µs job=7 Queued
+   decision t=37µs job=5 Admitted
+   decision t=37µs job=6 Admitted
+   decision t=37µs job=7 Admitted
+   decision t=39µs job=5 Cancelled
+   decision t=39.5µs job=8 Queued
+   decision t=40µs job=9 Queued
+   decision t=40.5µs job=10 Queued
+   decision t=41µs job=11 Queued
+   decision t=41.5µs job=12 Queued
+   decision t=42µs job=13 Queued
+   decision t=42.5µs job=14 Queued
+   decision t=43µs job=15 Queued
+   decision t=43.5µs job=16 Queued
+   decision t=44µs job=17 Queued
+   decision t=44.5µs job=18 Queued
+   decision t=45µs job=19 Queued
+   decision t=45.5µs job=20 Queued
+   decision t=46µs job=21 Queued
+   decision t=46.5µs job=22 Queued
+   decision t=47µs job=23 Queued
+   decision t=47.5µs job=24 Queued
+   decision t=48µs job=25 Queued
+   decision t=48.5µs job=26 Queued
+   decision t=49µs job=27 Queued
+   decision t=49.5µs job=28 Queued
+   decision t=50µs job=29 Queued
+   decision t=50.5µs job=30 Queued
+   decision t=51µs job=31 Queued
+   decision t=51.5µs job=32 Queued
+   decision t=52µs job=33 Queued
+   decision t=52.5µs job=34 Queued
+   decision t=53µs job=35 Queued
+   decision t=53.5µs job=36 Queued
+   decision t=54µs job=37 Queued
+   decision t=54.5µs job=38 Queued
+   decision t=55µs job=39 Queued
+   decision t=55.5µs job=40 Queued
+   decision t=56µs job=41 Queued
+   decision t=56.5µs job=42 Queued
+   decision t=57µs job=43 Queued
+   decision t=57.5µs job=44 Queued
+   decision t=58µs job=45 Queued
+   decision t=58.5µs job=46 Queued
+   decision t=59µs job=47 Queued
+   decision t=59µs job=8 Admitted
+   decision t=59µs job=9 Admitted
+   decision t=59µs job=10 Admitted
+   decision t=59µs job=11 Admitted
+   decision t=60µs job=8 Completed
+   decision t=60µs job=44 Admitted
+   decision t=61µs job=9 Completed
+   decision t=61µs job=40 Admitted
+   decision t=62µs job=10 Completed
+   decision t=62µs job=37 Admitted
+   decision t=63µs job=0 Cancelled
+   decision t=63µs job=1 Cancelled
+   decision t=63µs job=2 Cancelled
+   decision t=63µs job=3 Cancelled
+   decision t=63µs job=6 Cancelled
+   decision t=63µs job=7 Cancelled
+   decision t=3.000063s job=35 StarvationPromoted
+   decision t=3.000063s job=35 Admitted
+   decision t=3.000063s job=36 StarvationPromoted
+   decision t=3.000063s job=36 Admitted
+   decision t=3.000063s job=38 StarvationPromoted
+   decision t=3.000063s job=38 Admitted
+   decision t=3.000063s job=39 StarvationPromoted
+   decision t=3.000063s job=39 Admitted
+   decision t=3.000063013s job=11 Cancelled
+   decision t=3.000063014s job=12 Cancelled
+   decision t=3.000063015s job=13 Cancelled
+   decision t=3.000063016s job=14 Cancelled
+   decision t=3.000063017s job=15 Cancelled
+   decision t=3.000063018s job=16 Cancelled
+   decision t=3.000063019s job=17 Cancelled
+   decision t=3.00006302s job=18 Cancelled
+   decision t=3.000063021s job=19 Cancelled
+   decision t=3.000063022s job=20 Cancelled
+   decision t=3.000063023s job=21 Cancelled
+   decision t=3.000063024s job=22 Cancelled
+   decision t=3.000063025s job=23 Cancelled
+   decision t=3.000063026s job=24 Cancelled
+   decision t=3.000063027s job=25 Cancelled
+   decision t=3.000063028s job=26 Cancelled
+   decision t=3.000063029s job=27 Cancelled
+   decision t=3.00006303s job=28 Cancelled
+   decision t=3.000063031s job=29 Cancelled
+   decision t=3.000063032s job=30 Cancelled
+   decision t=3.000063033s job=31 Cancelled
+   decision t=3.000063034s job=32 Cancelled
+   decision t=3.000063035s job=33 Cancelled
+   decision t=3.000063036s job=34 Cancelled
+   decision t=3.000063037s job=35 Cancelled
+   decision t=3.000063038s job=36 Cancelled
+   decision t=3.000063039s job=37 Cancelled
+   decision t=3.00006304s job=38 Cancelled
+   decision t=3.000063041s job=39 Cancelled
+   decision t=3.000063042s job=40 Cancelled
+   decision t=3.000063043s job=41 Cancelled
+   decision t=3.000063044s job=42 Cancelled
+   decision t=3.000063045s job=43 Cancelled
+   decision t=3.000063046s job=44 Cancelled
+   decision t=3.000063047s job=45 Cancelled
+   decision t=3.000063048s job=46 Cancelled
+   decision t=3.000063049s job=47 Cancelled
+== end live_connections=0
+
+########## scene: rotation with live connections present ##########
+== divisible 0 id=0
+   admitted = [JobId(0)]
+   grants   = [(0, 100)]
+   capacity = None
+   metrics  = admitted=1 completed=0 cancelled=0 rejected_q=0 rejected_m=0 starve=0 promo=1 demo=0 grants=1 slices=0 work=0 peak_q=1 skip=0 halt=0 shed=0
+   res      = conn=0 hnd=0 cpu=0 div=1 slots=2 mem=4096 avail=67104768
+   queued   = []
+   baseline = 100
+   decision t=1µs job=0 Queued
+   decision t=1µs job=0 Reclassified { from: Unknown, to: Large }
+   decision t=1µs job=0 Admitted
+   decision t=1µs job=0 Quota { work: 100 }
+== divisible 1 id=1
+   admitted = [JobId(1)]
+   grants   = [(0, 100), (1, 100)]
+   capacity = None
+   metrics  = admitted=2 completed=0 cancelled=0 rejected_q=0 rejected_m=0 starve=0 promo=2 demo=0 grants=3 slices=0 work=0 peak_q=1 skip=0 halt=0 shed=0
+   res      = conn=0 hnd=0 cpu=0 div=2 slots=2 mem=8192 avail=67100672
+   queued   = []
+   baseline = 100
+   decision t=1µs job=0 Queued
+   decision t=1µs job=0 Reclassified { from: Unknown, to: Large }
+   decision t=1µs job=0 Admitted
+   decision t=1µs job=0 Quota { work: 100 }
+   decision t=2µs job=1 Queued
+   decision t=2µs job=1 Reclassified { from: Unknown, to: Large }
+   decision t=2µs job=1 Admitted
+   decision t=2µs job=0 Quota { work: 100 }
+   decision t=2µs job=1 Quota { work: 100 }
+== divisible 2 id=2
+   admitted = [JobId(2)]
+   grants   = [(1, 100), (2, 100)]
+   capacity = None
+   metrics  = admitted=3 completed=0 cancelled=0 rejected_q=0 rejected_m=0 starve=0 promo=3 demo=0 grants=5 slices=0 work=0 peak_q=1 skip=0 halt=0 shed=0
+   res      = conn=0 hnd=0 cpu=0 div=3 slots=2 mem=12288 avail=67096576
+   queued   = []
+   baseline = 100
+   decision t=1µs job=0 Queued
+   decision t=1µs job=0 Reclassified { from: Unknown, to: Large }
+   decision t=1µs job=0 Admitted
+   decision t=1µs job=0 Quota { work: 100 }
+   decision t=2µs job=1 Queued
+   decision t=2µs job=1 Reclassified { from: Unknown, to: Large }
+   decision t=2µs job=1 Admitted
+   decision t=2µs job=0 Quota { work: 100 }
+   decision t=2µs job=1 Quota { work: 100 }
+   decision t=3µs job=2 Queued
+   decision t=3µs job=2 Reclassified { from: Unknown, to: Large }
+   decision t=3µs job=2 Admitted
+   decision t=3µs job=1 Quota { work: 100 }
+   decision t=3µs job=2 Quota { work: 100 }
+-- round 0: live connection 3 granted 1
+   grant job=2 quota=100
+   grant job=0 quota=100
+   state: conns=1 div=3 queued=[] grants_total=7 work=200
+-- round 1: live connection 4 granted 1
+   grant job=0 quota=200
+   closed connection 3, re-admitted 0
+   grant-after-close job=0 quota=200
+   state: conns=1 div=3 queued=[] grants_total=9 work=400
+-- round 2: live connection 5 granted 1
+   grant job=0 quota=200
+   state: conns=2 div=3 queued=[] grants_total=10 work=600
+-- round 3: live connection 6 granted 1
+   grant job=1 quota=100
+   grant job=2 quota=100
+   closed connection 4, re-admitted 0
+   grant-after-close job=2 quota=200
+   state: conns=2 div=3 queued=[] grants_total=13 work=800
+-- round 4: live connection 7 granted 1
+   grant job=0 quota=200
+   state: conns=3 div=3 queued=[] grants_total=14 work=1000
+-- round 5: live connection 8 granted 1
+   grant job=0 quota=200
+   closed connection 5, re-admitted 0
+   grant-after-close job=0 quota=200
+   state: conns=3 div=3 queued=[] grants_total=16 work=1200
+-- round 6: live connection 9 granted 1
+   grant job=0 quota=200
+   state: conns=4 div=3 queued=[] grants_total=17 work=1400
+-- round 7: live connection 10 granted 1
+   grant job=1 quota=200
+   closed connection 6, re-admitted 0
+   grant-after-close job=2 quota=200
+   state: conns=4 div=3 queued=[] grants_total=19 work=1600
+-- round 8: live connection 11 granted 1
+   grant job=0 quota=200
+   state: conns=5 div=3 queued=[] grants_total=20 work=1800
+-- round 9: live connection 12 granted 1
+   grant job=0 quota=200
+   closed connection 7, re-admitted 0
+   grant-after-close job=0 quota=200
+   state: conns=5 div=3 queued=[] grants_total=22 work=2000
+   drained divisible 0 grants=1
+   drained divisible 1 grants=1
+   drained divisible 2 grants=0
+== rotation scene end
+   admitted = []
+   grants   = []
+   capacity = None
+   metrics  = admitted=13 completed=8 cancelled=5 rejected_q=0 rejected_m=0 starve=0 promo=3 demo=0 grants=24 slices=12 work=33000 peak_q=1 skip=0 halt=0 shed=0
+   res      = conn=0 hnd=0 cpu=0 div=0 slots=2 mem=0 avail=67108864
+   queued   = []
+   baseline = 100
+   decision t=1µs job=0 Queued
+   decision t=1µs job=0 Reclassified { from: Unknown, to: Large }
+   decision t=1µs job=0 Admitted
+   decision t=1µs job=0 Quota { work: 100 }
+   decision t=2µs job=1 Queued
+   decision t=2µs job=1 Reclassified { from: Unknown, to: Large }
+   decision t=2µs job=1 Admitted
+   decision t=2µs job=0 Quota { work: 100 }
+   decision t=2µs job=1 Quota { work: 100 }
+   decision t=3µs job=2 Queued
+   decision t=3µs job=2 Reclassified { from: Unknown, to: Large }
+   decision t=3µs job=2 Admitted
+   decision t=3µs job=1 Quota { work: 100 }
+   decision t=3µs job=2 Quota { work: 100 }
+   decision t=5µs job=3 Queued
+   decision t=5µs job=3 Admitted
+   decision t=5µs job=2 Quota { work: 100 }
+   decision t=5µs job=0 Quota { work: 100 }
+   decision t=7µs job=4 Queued
+   decision t=7µs job=4 Admitted
+   decision t=7µs job=0 Quota { work: 200 }
+   decision t=7µs job=3 Completed
+   decision t=7µs job=0 Quota { work: 200 }
+   decision t=9µs job=5 Queued
+   decision t=9µs job=5 Admitted
+   decision t=9µs job=0 Quota { work: 200 }
+   decision t=11µs job=6 Queued
+   decision t=11µs job=6 Admitted
+   decision t=11µs job=1 Quota { work: 100 }
+   decision t=11µs job=2 Quota { work: 100 }
+   decision t=11µs job=4 Completed
+   decision t=11µs job=2 Quota { work: 200 }
+   decision t=13µs job=7 Queued
+   decision t=13µs job=7 Admitted
+   decision t=13µs job=0 Quota { work: 200 }
+   decision t=15µs job=8 Queued
+   decision t=15µs job=8 Admitted
+   decision t=15µs job=0 Quota { work: 200 }
+   decision t=15µs job=5 Completed
+   decision t=15µs job=0 Quota { work: 200 }
+   decision t=17µs job=9 Queued
+   decision t=17µs job=9 Admitted
+   decision t=17µs job=0 Quota { work: 200 }
+   decision t=19µs job=10 Queued
+   decision t=19µs job=10 Admitted
+   decision t=19µs job=1 Quota { work: 200 }
+   decision t=19µs job=6 Completed
+   decision t=19µs job=2 Quota { work: 200 }
+   decision t=21µs job=11 Queued
+   decision t=21µs job=11 Admitted
+   decision t=21µs job=0 Quota { work: 200 }
+   decision t=23µs job=12 Queued
+   decision t=23µs job=12 Admitted
+   decision t=23µs job=0 Quota { work: 200 }
+   decision t=23µs job=7 Completed
+   decision t=23µs job=0 Quota { work: 200 }
+   decision t=23.5µs job=0 Completed
+   decision t=23.5µs job=1 Quota { work: 200 }
+   decision t=24µs job=1 Completed
+   decision t=24µs job=2 Quota { work: 200 }
+   decision t=24.5µs job=2 Completed
+   decision t=24.5µs job=8 Cancelled
+   decision t=24.5µs job=9 Cancelled
+   decision t=24.5µs job=10 Cancelled
+   decision t=24.5µs job=11 Cancelled
+   decision t=24.5µs job=12 Cancelled

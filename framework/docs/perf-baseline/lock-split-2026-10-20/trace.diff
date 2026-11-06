@@ -1,0 +1,137 @@
+--- before_trace.txt	2026-10-20 01:39:53.389711900 +0300
++++ after_trace.txt	2026-10-20 01:44:13.853612700 +0300
+@@ -929,41 +929,45 @@
+ -- round 1: live connection 4 granted 1
+    grant job=0 quota=200
+    closed connection 3, re-admitted 0
+-   grant-after-close job=0 quota=200
+-   state: conns=1 div=3 queued=[] grants_total=9 work=400
++   grant-after-close job=1 quota=100
++   grant-after-close job=2 quota=100
++   state: conns=1 div=3 queued=[] grants_total=10 work=400
+ -- round 2: live connection 5 granted 1
+-   grant job=0 quota=200
+-   state: conns=2 div=3 queued=[] grants_total=10 work=600
++   grant job=2 quota=200
++   state: conns=2 div=3 queued=[] grants_total=11 work=600
+ -- round 3: live connection 6 granted 1
+-   grant job=1 quota=100
+-   grant job=2 quota=100
++   grant job=0 quota=200
+    closed connection 4, re-admitted 0
+-   grant-after-close job=2 quota=200
+-   state: conns=2 div=3 queued=[] grants_total=13 work=800
++   grant-after-close job=1 quota=100
++   grant-after-close job=2 quota=100
++   state: conns=2 div=3 queued=[] grants_total=14 work=800
+ -- round 4: live connection 7 granted 1
+-   grant job=0 quota=200
+-   state: conns=3 div=3 queued=[] grants_total=14 work=1000
++   grant job=2 quota=200
++   state: conns=3 div=3 queued=[] grants_total=15 work=1000
+ -- round 5: live connection 8 granted 1
+    grant job=0 quota=200
+    closed connection 5, re-admitted 0
+-   grant-after-close job=0 quota=200
+-   state: conns=3 div=3 queued=[] grants_total=16 work=1200
++   grant-after-close job=1 quota=100
++   grant-after-close job=2 quota=100
++   state: conns=3 div=3 queued=[] grants_total=18 work=1200
+ -- round 6: live connection 9 granted 1
+-   grant job=0 quota=200
+-   state: conns=4 div=3 queued=[] grants_total=17 work=1400
++   grant job=2 quota=200
++   state: conns=4 div=3 queued=[] grants_total=19 work=1400
+ -- round 7: live connection 10 granted 1
+-   grant job=1 quota=200
++   grant job=0 quota=200
+    closed connection 6, re-admitted 0
+-   grant-after-close job=2 quota=200
+-   state: conns=4 div=3 queued=[] grants_total=19 work=1600
++   grant-after-close job=1 quota=100
++   grant-after-close job=2 quota=100
++   state: conns=4 div=3 queued=[] grants_total=22 work=1600
+ -- round 8: live connection 11 granted 1
+-   grant job=0 quota=200
+-   state: conns=5 div=3 queued=[] grants_total=20 work=1800
++   grant job=2 quota=200
++   state: conns=5 div=3 queued=[] grants_total=23 work=1800
+ -- round 9: live connection 12 granted 1
+    grant job=0 quota=200
+    closed connection 7, re-admitted 0
+-   grant-after-close job=0 quota=200
+-   state: conns=5 div=3 queued=[] grants_total=22 work=2000
++   grant-after-close job=1 quota=100
++   grant-after-close job=2 quota=100
++   state: conns=5 div=3 queued=[] grants_total=26 work=2000
+    drained divisible 0 grants=1
+    drained divisible 1 grants=1
+    drained divisible 2 grants=0
+@@ -971,7 +975,7 @@
+    admitted = []
+    grants   = []
+    capacity = None
+-   metrics  = admitted=13 completed=8 cancelled=5 rejected_q=0 rejected_m=0 starve=0 promo=3 demo=0 grants=24 slices=12 work=33000 peak_q=1 skip=0 halt=0 shed=0
++   metrics  = admitted=13 completed=8 cancelled=5 rejected_q=0 rejected_m=0 starve=0 promo=3 demo=0 grants=28 slices=11 work=33000 peak_q=1 skip=0 halt=0 shed=0
+    res      = conn=0 hnd=0 cpu=0 div=0 slots=2 mem=0 avail=67108864
+    queued   = []
+    baseline = 100
+@@ -997,42 +1001,46 @@
+    decision t=7µs job=4 Admitted
+    decision t=7µs job=0 Quota { work: 200 }
+    decision t=7µs job=3 Completed
+-   decision t=7µs job=0 Quota { work: 200 }
++   decision t=7µs job=1 Quota { work: 100 }
++   decision t=7µs job=2 Quota { work: 100 }
+    decision t=9µs job=5 Queued
+    decision t=9µs job=5 Admitted
+-   decision t=9µs job=0 Quota { work: 200 }
++   decision t=9µs job=2 Quota { work: 200 }
+    decision t=11µs job=6 Queued
+    decision t=11µs job=6 Admitted
++   decision t=11µs job=0 Quota { work: 200 }
++   decision t=11µs job=4 Completed
+    decision t=11µs job=1 Quota { work: 100 }
+    decision t=11µs job=2 Quota { work: 100 }
+-   decision t=11µs job=4 Completed
+-   decision t=11µs job=2 Quota { work: 200 }
+    decision t=13µs job=7 Queued
+    decision t=13µs job=7 Admitted
+-   decision t=13µs job=0 Quota { work: 200 }
++   decision t=13µs job=2 Quota { work: 200 }
+    decision t=15µs job=8 Queued
+    decision t=15µs job=8 Admitted
+    decision t=15µs job=0 Quota { work: 200 }
+    decision t=15µs job=5 Completed
+-   decision t=15µs job=0 Quota { work: 200 }
++   decision t=15µs job=1 Quota { work: 100 }
++   decision t=15µs job=2 Quota { work: 100 }
+    decision t=17µs job=9 Queued
+    decision t=17µs job=9 Admitted
+-   decision t=17µs job=0 Quota { work: 200 }
++   decision t=17µs job=2 Quota { work: 200 }
+    decision t=19µs job=10 Queued
+    decision t=19µs job=10 Admitted
+-   decision t=19µs job=1 Quota { work: 200 }
++   decision t=19µs job=0 Quota { work: 200 }
+    decision t=19µs job=6 Completed
+-   decision t=19µs job=2 Quota { work: 200 }
++   decision t=19µs job=1 Quota { work: 100 }
++   decision t=19µs job=2 Quota { work: 100 }
+    decision t=21µs job=11 Queued
+    decision t=21µs job=11 Admitted
+-   decision t=21µs job=0 Quota { work: 200 }
++   decision t=21µs job=2 Quota { work: 200 }
+    decision t=23µs job=12 Queued
+    decision t=23µs job=12 Admitted
+    decision t=23µs job=0 Quota { work: 200 }
+    decision t=23µs job=7 Completed
+-   decision t=23µs job=0 Quota { work: 200 }
++   decision t=23µs job=1 Quota { work: 100 }
++   decision t=23µs job=2 Quota { work: 100 }
+    decision t=23.5µs job=0 Completed
+-   decision t=23.5µs job=1 Quota { work: 200 }
++   decision t=23.5µs job=2 Quota { work: 200 }
+    decision t=24µs job=1 Completed
+    decision t=24µs job=2 Quota { work: 200 }
+    decision t=24.5µs job=2 Completed

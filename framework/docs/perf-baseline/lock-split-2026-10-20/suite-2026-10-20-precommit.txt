@@ -1,0 +1,607 @@
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 0.32s
+     Running unittests src\lib.rs (target\debug\deps\aether-eb0d3d01b76953cf.exe)
+
+running 5 tests
+test app::tests::bare_ipv6_literal_keeps_its_address_instead_of_losing_a_group ... ok
+test app::tests::connection_tokens_are_read_per_token_not_per_line ... ok
+test app::tests::listen_addr_forms_select_the_requested_host_and_port ... ok
+test app::tests::duplicated_single_value_fields_resolve_to_the_first_wire_line ... ok
+test app::tests::non_numeric_port_is_an_error_not_a_silent_default ... ok
+
+test result: ok. 5 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running unittests src\bin\sched_compare.rs (target\debug\deps\sched_compare-90f2b71b4dee8137.exe)
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running unittests src\lib.rs (target\debug\deps\aether_core-e2b83eb6a8da36db.exe)
+
+running 8 tests
+test arena::tests::test_arena_bump_and_reset ... ok
+test arena::tests::test_arena_empty_slice ... ok
+test arena::tests::test_arena_exhaustion_returns_none ... ok
+test arena::tests::test_arena_refuses_over_alignment ... ok
+test arena::tests::test_arena_respects_alignment ... ok
+test arena::tests::test_arena_used_and_remaining_agree ... ok
+test bitset::tests::test_bitset_operations ... ok
+test arena::tests::test_arena_zero_capacity_does_not_crash ... ok
+
+test result: ok. 8 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running unittests src\lib.rs (target\debug\deps\aether_dependency-a507074051bf07e1.exe)
+
+running 4 tests
+test dag::tests::test_dangling_dependency_is_not_reported_as_cycle ... ok
+test dag::tests::test_plan_is_deterministic_with_multiple_roots ... ok
+test dag::tests::test_real_cycle_still_detected ... ok
+test dag::tests::test_topological_sort_and_cycle_check ... ok
+
+test result: ok. 4 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running unittests basic_api.rs (target\debug\deps\basic_api-dd2a998c8f25de0b.exe)
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running unittests full_async_api.rs (target\debug\deps\full_async_api-91221ab1672b8e5f.exe)
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running unittests scheduling_demo.rs (target\debug\deps\scheduling_demo-eff65581936fd78c.exe)
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running unittests fuzz_targets\http_parse_fuzz.rs (target\debug\deps\http_parse_fuzz-793dbe25f582d81b.exe)
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running unittests src\lib.rs (target\debug\deps\aether_http-a167069f30131cdc.exe)
+
+running 81 tests
+test multipart::tests::content_type_is_case_insensitive_and_disposition_parameters_are_typed ... ok
+test multipart::tests::escaped_non_ascii_in_quoted_parameter_decodes_without_panic ... ok
+test multipart::tests::embedded_boundary_lookalike_is_data ... ok
+test multipart::tests::parses_file_metadata_and_binary_payload ... ok
+test multipart::tests::parses_multiple_text_fields ... ok
+test multipart::tests::preserves_single_trailing_crlf_in_data ... ok
+test multipart::tests::preamble_and_epilogue_are_ignored ... ok
+test multipart::tests::quoted_boundary_and_escaped_parameter ... ok
+test multipart::tests::rejects_escape_of_line_break_and_unterminated_quote ... ok
+test multipart::tests::rejects_folded_and_invalid_part_headers ... ok
+test multipart::tests::rejects_malformed_inputs ... ok
+test multipart::tests::rejects_oversized_boundary_and_non_form_type ... ok
+test parser::tests::test_body_limit_enforced_from_content_length ... ok
+test parser::tests::test_chunk_extensions_ignored ... ok
+test parser::tests::test_chunked_body_limit_enforced ... ok
+test parser::tests::test_chunked_consumed_offset_is_exact_for_pipelining ... ok
+test parser::tests::test_chunked_http10_rejected ... ok
+test parser::tests::test_chunked_malformed_framing_rejected ... ok
+test parser::tests::test_chunked_single_and_multi_chunk_decoded ... ok
+test parser::tests::test_chunked_rejects_framing_trailer_names ... ok
+test parser::tests::test_chunked_token_is_case_insensitive ... ok
+test parser::tests::test_chunked_partial_at_every_prefix_requests_more ... ok
+test parser::tests::test_chunked_trailers_are_bounded ... ok
+test parser::tests::test_chunked_with_content_length_rejected ... ok
+test parser::tests::test_consumed_offset_is_exact_for_pipelining ... ok
+test parser::tests::test_content_length_overflow_is_rejected_not_wrapped ... ok
+test parser::tests::test_duplicate_and_unsupported_transfer_encoding_rejected ... ok
+test parser::tests::test_framing_headers_accept_only_ascii_ows ... ok
+test parser::tests::test_header_count_limit_is_enforced ... ok
+test parser::tests::test_header_byte_budget_enforced ... ok
+test parser::tests::test_http11_rejects_empty_host_value ... ok
+test parser::tests::test_header_count_limit_above_stack_slots ... ok
+test parser::tests::test_http11_requires_exactly_one_host ... ok
+test parser::tests::test_legacy_parse_still_rejects_transfer_encoding ... ok
+test parser::tests::test_malformed_content_length_rejected ... ok
+test parser::tests::test_malformed_requests_do_not_panic ... ok
+test parser::tests::test_partial_requests_request_more_data ... ok
+test parser::tests::test_path_query_split ... ok
+test parser::tests::test_smuggling_cl_te_conflict_rejected ... ok
+test parser::tests::test_smuggling_dual_content_length_rejected ... ok
+test parser::tests::test_smuggling_obfuscated_transfer_encoding_rejected ... ok
+test parser::tests::test_smuggling_te_only_rejected ... ok
+test parser::tests::test_unknown_method_rejected ... ok
+test response::tests::bench_date_write_paths ... ignored, perf microbench; run with cargo test --release -p aether-http -- --ignored --nocapture
+test parser::tests::test_version_minor_reads_only_the_first_line ... ok
+test response::tests::test_204_and_304_carry_no_content_length ... ok
+test response::tests::test_bodyless_status_drops_stray_payload ... ok
+test response::tests::test_cached_date_single_emission_per_response ... ok
+test response::tests::test_cached_date_write_matches_uncached_format ... ok
+test response::tests::test_caller_transfer_encoding_never_emitted ... ok
+test response::tests::test_canonical_reason_phrases ... ok
+test response::tests::test_clean_header_values_are_untouched ... ok
+test response::tests::test_header_value_crlf_injection_is_neutralised ... ok
+test response::tests::test_header_value_nul_and_lone_lf_are_stripped ... ok
+test response::tests::test_http_date_matches_known_fixtures ... ok
+test response::tests::test_json_status_has_single_correct_content_length ... ok
+test response::tests::test_redirect_uses_canonical_reason ... ok
+test response::tests::test_set_cookie_encodes_injection_characters ... ok
+test response::tests::test_user_supplied_date_is_preserved_not_duplicated ... ok
+test response::tests::test_write_http1_emits_exactly_one_content_length ... ok
+test response::tests::test_write_http1_includes_date_once ... ok
+test static_files::tests::test_conditional_get_304_with_weak_and_list_matches ... ok
+test static_files::tests::test_etag_is_a_valid_quoted_entity_tag ... ok
+test static_files::tests::test_if_range_mismatch_serves_full_representation ... ok
+test static_files::tests::test_range_header_decisions ... ok
+test static_files::tests::test_range_response_headers_and_body ... ok
+test static_files::tests::test_unsatisfiable_range_is_416_without_body ... ok
+test static_files::tests::test_path_traversal_prevention ... ok
+test static_files::tests::test_windows_device_and_stream_paths_are_rejected ... ok
+test url::tests::test_arabic_is_not_mojibake ... ok
+test url::tests::test_ascii_escapes ... ok
+test url::tests::test_empty_and_edge_inputs ... ok
+test url::tests::test_encoded_traversal_decodes_for_caller_inspection ... ok
+test url::tests::test_invalid_escapes_are_left_verbatim ... ok
+test url::tests::test_invalid_utf8_yields_replacement_not_panic ... ok
+test url::tests::test_lowercase_hex_accepted ... ok
+test url::tests::test_no_escapes_borrows ... ok
+test url::tests::test_null_bytes_are_preserved_for_caller_to_reject ... ok
+test url::tests::test_plus_is_literal_for_path_decoding ... ok
+test multipart::tests::enforces_part_count_limit ... ok
+test url::tests::test_utf8_round_trip ... ok
+
+test result: ok. 80 passed; 0 failed; 1 ignored; 0 measured; 0 filtered out; finished in 0.01s
+
+     Running unittests src\lib.rs (target\debug\deps\aether_middleware-5db7435fef2a3b75.exe)
+
+running 42 tests
+test compression::tests::test_no_compression_without_accept ... ok
+test compression::tests::test_compression_config_default ... ok
+test compression::tests::test_content_range_on_a_200_is_left_alone ... ok
+test compression::tests::test_no_vary_on_bodyless_status_codes ... ok
+test compression::tests::test_gzip_compression ... ok
+test compression::tests::test_partial_content_is_never_compressed ... ok
+test compression::tests::test_select_encoding_honours_q_values ... ok
+test compression::tests::test_incompressible_body_is_left_alone ... ok
+test compression::tests::test_select_encoding_malformed_q_does_not_panic ... ok
+test compression::tests::test_select_encoding_rejects_substring_false_positives ... ok
+test compression::tests::test_gzip_round_trip_and_content_length ... ok
+test compression::tests::test_select_encoding_respects_disabled_codecs ... ok
+test compression::tests::test_select_encoding_wildcard_and_case ... ok
+test compression::tests::test_skip_small_responses ... ok
+test compression::tests::test_precompressed_content_types_are_skipped ... ok
+test compression::tests::test_brotli_round_trip ... ok
+test compression::tests::test_vary_is_added_even_when_client_declines_compression ... ok
+test cors::tests::test_allowlist_is_not_a_substring_match ... ok
+test cors::tests::test_allowlist_reflects_matching_origin_and_varies ... ok
+test cors::tests::test_allowlist_rejects_unknown_origin ... ok
+test cors::tests::test_credentials_with_explicit_origin ... ok
+test cors::tests::test_every_duplicate_allow_origin_line_is_removed ... ok
+test cors::tests::test_legacy_apply_still_works ... ok
+test cors::tests::test_middleware_does_not_duplicate_handler_cors_headers ... ok
+test compression::tests::test_non_ascii_content_type_does_not_panic_the_prefix_check ... ok
+test compression::tests::test_vary_accept_encoding_is_added ... ok
+test cors::tests::test_preflight_allows_safelisted_headers ... ok
+test cors::tests::test_preflight_emits_max_age_and_methods ... ok
+test cors::tests::test_preflight_rejects_disallowed_header ... ok
+test cors::tests::test_preflight_rejects_disallowed_method ... ok
+test cors::tests::test_preflight_rejects_unknown_origin_against_allowlist ... ok
+test compression::tests::test_vary_is_not_duplicated ... ok
+test cors::tests::test_preflight_varies_on_the_fields_that_decide_it ... ok
+test cors::tests::test_repeated_vary_lines_collapse_into_one ... ok
+test cors::tests::test_vary_origin_not_duplicated_and_composes ... ok
+test cors::tests::test_wildcard_default ... ok
+test cors::tests::test_wildcard_plus_credentials_fails_closed ... ok
+test security::tests::test_apply_sets_baseline_headers_once ... ok
+test security::tests::test_configured_optional_headers_are_applied ... ok
+test security::tests::test_defaults_match_current_guidance ... ok
+test security::tests::test_handler_supplied_header_is_not_duplicated ... ok
+test security::tests::test_optional_headers_are_off_by_default ... ok
+
+test result: ok. 42 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.01s
+
+     Running unittests src\lib.rs (target\debug\deps\aether_observability-3b8c5e91ab5cbda3.exe)
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running unittests src\lib.rs (target\debug\deps\aether_openapi-7805cb5133b94ae6.exe)
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running unittests src\lib.rs (target\debug\deps\aether_router-c4c5e84b5d377b7f.exe)
+
+running 19 tests
+test trie::tests::test_catchall_borrows_from_the_request_path ... ok
+test trie::tests::test_405_still_reported_when_no_route_matches_both ... ok
+test trie::tests::test_catchall_captures_full_remaining_path ... ok
+test trie::tests::test_catchall_offset_arithmetic_stays_in_bounds ... ok
+test trie::tests::test_cross_name_param_registration_merges_and_keeps_both_handlers ... ok
+test trie::tests::test_duplicate_catchall_registration_panics - should panic ... ok
+test trie::tests::test_duplicate_param_registration_with_alias_name_panics - should panic ... ok
+test trie::tests::test_duplicate_catchall_registration_with_alias_name_panics - should panic ... ok
+test trie::tests::test_duplicate_registration_panics - should panic ... ok
+test trie::tests::test_duplicate_root_registration_panics - should panic ... ok
+test trie::tests::test_malformed_paths_do_not_panic ... ok
+test trie::tests::test_method_backtracking_is_order_independent ... ok
+test trie::tests::test_method_mismatch_on_static_does_not_block_param_route ... ok
+test trie::tests::test_radix_routing_with_params_and_precedence ... ok
+test trie::tests::test_same_path_different_method_is_allowed ... ok
+test trie::tests::test_static_wins_over_catchall_at_same_depth ... ok
+test trie::tests::test_trailing_slash_and_empty_segments_are_normalized ... ok
+test trie::tests::test_unregistered_path_is_not_found ... ok
+test trie::tests::test_large_route_table ... ok
+
+test result: ok. 19 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.03s
+
+     Running unittests src\lib.rs (target\debug\deps\aether_runtime-6083e2a94dcadd36.exe)
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running unittests src\lib.rs (target\debug\deps\aether_scheduler-c0754667f398bbec.exe)
+
+running 5 tests
+test baseline::tests::zero_min_samples_falls_back_instead_of_indexing_an_empty_set ... ok
+test baseline::tests::median_does_not_overflow_on_extreme_samples ... ok
+test baseline::tests::median_of_an_even_sample_set_averages_the_two_centres ... ok
+test engine::tests::only_divisible_jobs_join_the_rotation_index ... ok
+test engine::tests::divisible_removal_keeps_the_remaining_order_and_leaves_no_orphans ... ok
+
+test result: ok. 5 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running tests\engine.rs (target\debug\deps\engine-ebb1c24f7b918f8d.exe)
+
+running 21 tests
+test admission_respects_slot_bounds ... ok
+test deficit_round_robin_banks_unspent_quantum ... ok
+test baseline_samples_exclude_large_completions ... ok
+test completion_accounts_the_whole_declared_total ... ok
+test cancel_a_queued_job_never_releases_unheld_capacity ... ok
+test determinism_same_input_same_decision_log ... ok
+test indivisible_jobs_are_never_granted_slices ... ok
+test fifo_runs_a_divisible_job_to_completion ... ok
+test large_job_quota_starts_at_one_baseline_share ... ok
+test memory_budget_backpressures_without_rejecting ... ok
+test overshooting_a_declared_hint_keeps_granting_and_reclassifies ... ok
+test queue_overflow_rejects_oldest_arrival_policy ... ok
+test quota_shrinks_fast_after_an_overrun_slice ... ok
+test resources_shrink_slowly_and_recover_additively ... ok
+test round_budget_caps_total_grants_per_round ... ok
+test round_robin_rotates_one_grant_per_job_per_round ... ok
+test starvation_guard_admits_the_oldest_protected_job_first ... ok
+test terminal_transitions_release_exactly_once ... ok
+test unknown_size_jobs_converge_to_large_from_executed_work ... ok
+test wait_boost_rewards_staleness_not_age ... ok
+test zero_work_http_jobs_never_degrade_the_work_baseline ... ok
+
+test result: ok. 21 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running tests\memory_reprice.rs (target\debug\deps\memory_reprice-0dad79cd37e841ae.exe)
+
+running 4 tests
+test growth_beyond_the_budget_is_refused_and_changes_nothing ... ok
+test release_returns_the_repriced_amount_not_the_original_one ... ok
+test only_a_running_job_can_be_repriced ... ok
+test shrinking_returns_bytes_to_work_that_was_blocked_on_them ... ok
+
+test result: ok. 4 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running tests\pump_head_of_line.rs (target\debug\deps\pump_head_of_line-329206d883cb1e5e.exe)
+
+running 8 tests
+test blocked_reason_is_reported_without_changing_state ... ok
+test handler_behind_unfittable_connection_is_admitted ... ok
+test arrival_precedence_survives_when_everything_fits ... ok
+test interleaved_unfittable_and_fitting_jobs_all_progress ... ok
+test pump_with_nothing_admissible_changes_nothing ... ok
+test starved_job_is_served_first_out_of_freed_capacity ... ok
+test starved_job_leads_the_order ... ok
+test skip_walk_is_bounded_and_rotates ... ok
+
+test result: ok. 8 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running tests\sim.rs (target\debug\deps\sim-ae31838fc3008718.exe)
+
+running 8 tests
+test large_floor_matches_generator_band ... ok
+test workload_is_reproducible_byte_for_byte ... ok
+test adaptive_tree_slices_large_jobs_instead_of_running_them_to_completion ... ok
+test adaptive_tree_limits_the_head_start_wait_of_small_jobs_under_a_burst ... ok
+test admission_rejection_never_loses_or_invents_work ... ok
+test simulation_is_deterministic_across_runs ... ok
+test all_policies_do_identical_total_work_when_nothing_is_rejected ... ok
+test every_job_is_accounted_for_exactly_once ... ok
+
+test result: ok. 8 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 1.06s
+
+     Running tests\stress.rs (target\debug\deps\stress-8f72a7aabc5cefc2.exe)
+
+running 2 tests
+test stress_cancel_storm_returns_capacity_to_baseline ... ok
+test stress_mixed_kinds_5000_jobs_no_leaks ... ok
+
+test result: ok. 2 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.51s
+
+     Running unittests src\lib.rs (target\debug\deps\aether_security-c8f9cd5e27b0cf81.exe)
+
+running 7 tests
+test constant_time::tests::test_constant_time ... ok
+test jwt::tests::test_jwt_verification_valid_and_invalid ... ok
+test jwt::tests::test_constant_time_helper_still_available ... ok
+test jwt::tests::test_algorithm_confusion_is_rejected ... ok
+test jwt::tests::test_base64url_rejects_non_canonical_encodings ... ok
+test jwt::tests::test_malformed_claims_rejected ... ok
+test jwt::tests::test_claims_are_validated ... ok
+
+test result: ok. 7 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running unittests src\lib.rs (target\debug\deps\aether_serialization-c04a62e0fc48e0ac.exe)
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running unittests src\lib.rs (target\debug\deps\aether_tests-1bf1421682397d29.exe)
+
+running 12 tests
+test tests::test_405_method_not_allowed_with_allow_header ... ok
+test tests::test_fragmented_tcp_read_handling ... ok
+test tests::test_full_request_lifecycle ... ok
+test tests::test_error_codes_and_diagnostics ... ok
+test tests::test_app_state_container ... ok
+test tests::test_64bit_bitset ... ok
+test tests::test_http_request_parsing_and_query_split ... ok
+test tests::test_pipelined_requests_framing ... ok
+test tests::test_request_arena_zero_copy ... ok
+test tests::test_response_headers_and_cookies ... ok
+test tests::test_static_mime_and_etag ... ok
+test tests::test_server_banner ... ok
+
+test result: ok. 12 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running tests\extractors.rs (target\debug\deps\extractors-6fa401f708980fe8.exe)
+
+running 17 tests
+test json_rejects_malformed_body_with_400 ... ok
+test extraction_failure_short_circuits_handler ... ok
+test multi_extractor_handler ... ok
+test extractors_work_in_route_groups ... ok
+test form_body_with_optional_flag ... ok
+test path_primitive ... ok
+test json_rejects_wrong_content_type_with_415 ... ok
+test json_body_roundtrip ... ok
+test query_rejects_missing_required_field ... ok
+test path_rejects_non_numeric_primitive ... ok
+test state_extractor_missing_type_is_500 ... ok
+test path_string ... ok
+test path_struct_with_multiple_params ... ok
+test state_extractor_reads_managed_state ... ok
+test query_struct_with_optional_field ... ok
+test zero_argument_handler ... ok
+test request_context_extractor_still_passes_by_move ... ok
+
+test result: ok. 17 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.01s
+
+     Running tests\handler_exec_semantics.rs (target\debug\deps\handler_exec_semantics-f8c5eda735a0613d.exe)
+
+running 7 tests
+test sync_handler_panic_returns_500_and_keepalive_survives ... ok
+test async_handler_panic_returns_500_and_keepalive_survives ... ok
+test blocking_sync_handler_timeout_is_best_effort_and_never_preempted ... ok
+test client_disconnect_does_not_cancel_running_handler ... ok
+test drain_timeout_aborts_connection_but_handler_finishes_orphaned ... ok
+test blocking_sync_handler_blast_radius_is_measured ... ok
+test async_handler_over_timeout_is_aborted_with_504_and_close ... ok
+
+test result: ok. 7 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 1.00s
+
+     Running tests\http_e2e.rs (target\debug\deps\http_e2e-168f275e7d91ac3f.exe)
+
+running 20 tests
+test http10_chunked_request_is_rejected ... ok
+test duplicate_request_header_fields_are_preserved ... ok
+test handler_panics_are_isolated_to_one_response ... ok
+test http10_explicit_keepalive_persists_and_is_advertised ... ok
+test cors_preflight_is_scoped_to_real_routes ... ok
+test body_and_header_limits_are_enforced_with_413_and_431 ... ok
+test http10_requests_close_after_one_response_by_default ... ok
+test http11_default_persistence_is_unchanged ... ok
+test multipart_form_data_is_parsed_end_to_end ... ok
+test keep_alive_pipelining_and_chunked_bodies ... ok
+test static_range_parser_contract ... ok
+test routing_params_405_allow_head_and_404 ... ok
+test websocket_upgrade_echo_fragmentation_ping_and_close ... ok
+test static_file_serves_disk_content_over_async_route ... ok
+test websocket_handshake_failures_and_unmasked_frames_are_rejected ... ok
+test static_files_support_conditional_and_range_requests ... ok
+test error_responses_survive_unread_pipelined_bytes ... ok
+test idle_keepalive_connection_closes_after_keep_alive_timeout ... ok
+test slow_trickle_receives_408_within_the_total_deadline ... ok
+test graceful_shutdown_stops_accepting_and_drains_keep_alive ... ok
+
+test result: ok. 20 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 2.05s
+
+     Running tests\scheduling.rs (target\debug\deps\scheduling-4cab614129142f80.exe)
+
+running 13 tests
+test divisible_driver_slices_a_big_job_while_serving_http ... ok
+test panicking_websocket_session_is_tallied_as_cancelled ... ok
+test policies_are_swappable_through_the_same_integration ... ok
+test scheduled_server_serves_requests_normally ... ok
+test handler_timeout_releases_its_slot ... ok
+test websocket_buffers_are_charged_to_the_memory_budget ... ok
+test client_disconnect_frees_connection_capacity ... ok
+test handler_concurrency_is_bounded_by_slots ... ok
+test live_websocket_session_holds_its_buffer_registration ... ok
+test handler_queue_overflow_returns_503 ... ok
+test stress_120_concurrent_clients_over_scheduled_server ... ok
+test idle_sockets_are_charged_what_they_hold_not_what_they_could_reach ... ok
+test graceful_shutdown_drains_scheduled_workload ... ok
+
+test result: ok. 13 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 2.06s
+
+     Running tests\test_client.rs (target\debug\deps\test_client-019c01a194523c3a.exe)
+
+running 12 tests
+test form_post_is_decoded_by_handler ... ok
+test get_text_roundtrip ... ok
+test request_id_header_returned ... ok
+test custom_request_header_reaches_handler ... ok
+test post_json_body_and_json_helper ... ok
+test path_params_and_decoded_query ... ok
+test managed_state_is_shared ... ok
+test head_carries_length_without_body ... ok
+test url_points_at_bound_port ... ok
+test security_headers_applied_when_enabled ... ok
+test unknown_path_is_404 ... ok
+test shutdown_stops_accepting_connections ... ok
+
+test result: ok. 12 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 2.26s
+
+     Running tests\user_middleware.rs (target\debug\deps\user_middleware-2be4f71d9b86b23d.exe)
+
+running 8 tests
+test middleware_observes_and_can_modify_request ... ok
+test middleware_runs_in_registration_order ... ok
+test middleware_composes_with_extractors ... ok
+test middleware_modifies_response ... ok
+test middleware_can_short_circuit ... ok
+test middleware_error_does_not_break_server ... ok
+test middleware_applies_only_to_routes_registered_after ... ok
+test group_middleware_scopes_to_group ... ok
+
+test result: ok. 8 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.01s
+
+     Running unittests src\lib.rs (target\debug\deps\aether_validation-aeaa9896517351a7.exe)
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running unittests src\lib.rs (target\debug\deps\aether_websocket-bb1d5ec6eee013c5.exe)
+
+running 23 tests
+test connection::tests::continuation_without_start_is_rejected ... ok
+test connection::tests::close_code_and_payload_rules ... ok
+test connection::tests::close_is_echoed_and_ends_the_stream ... ok
+test connection::tests::initial_bytes_from_the_upgrade_request_are_not_lost ... ok
+test connection::tests::declared_oversized_frame_is_rejected_before_payload_arrives ... ok
+test connection::tests::reassembles_fragments_and_answers_ping_in_between ... ok
+test connection::tests::reassembled_message_limit_is_enforced ... ok
+test connection::tests::rejects_text_with_invalid_utf8 ... ok
+test connection::tests::rejects_unmasked_client_frame_with_protocol_close ... ok
+test connection::tests::server_output_is_unmasked_and_round_trips ... ok
+test handshake::tests::accepts_valid_handshakes ... ok
+test handshake::tests::base64_round_trip_and_canonical_rules ... ok
+test handshake::tests::rejects_missing_or_invalid_fields ... ok
+test handshake::tests::rfc6455_example_accept_key ... ok
+test tests::test_client_frame_is_unmasked ... ok
+test tests::test_control_frame_rules ... ok
+test tests::test_hostile_inputs_do_not_panic ... ok
+test tests::test_length_encodings_are_minimal_and_bounded ... ok
+test tests::test_partial_frames_request_more_data ... ok
+test tests::test_reserved_bits_and_opcodes_rejected ... ok
+test tests::test_unmasked_client_frame_rejected ... ok
+test tests::test_unmasked_text_frame ... ok
+test connection::tests::ping_after_close_is_refused_and_nothing_reaches_the_wire ... ok
+
+test result: ok. 23 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.06s
+
+   Doc-tests aether
+
+running 3 tests
+test aether\src\app.rs - app::AetherApp::use_middleware (line 422) - compile ... ok
+test aether\src\test_client.rs - test_client (line 8) - compile ... ok
+test aether\src\extract.rs - extract (line 6) - compile ... ok
+
+test result: ok. 3 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+all doctests ran in 0.85s; merged doctests compilation took 0.81s
+   Doc-tests aether_core
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+   Doc-tests aether_dependency
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+   Doc-tests aether_http
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+   Doc-tests aether_middleware
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+   Doc-tests aether_observability
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+   Doc-tests aether_openapi
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+   Doc-tests aether_router
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+   Doc-tests aether_runtime
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+   Doc-tests aether_scheduler
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+   Doc-tests aether_security
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+   Doc-tests aether_serialization
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+   Doc-tests aether_tests
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+   Doc-tests aether_validation
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+   Doc-tests aether_websocket
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+

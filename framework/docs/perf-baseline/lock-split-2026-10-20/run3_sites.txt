@@ -1,0 +1,42 @@
+=== threads=1 target=0 ===
+mode=real live_conn=256 handler_slots=32 registered=8388608
+threads=1 live=256 cycles=4186791 -> 837336 cycle/s | per acquisition: wait 17 ns, hold 156 ns | per cycle: wait 0.10 us + hold 0.94 us = 1.04 us (10% wait) | wait max 422.8 us, hold max 924.6 us
+  fast path (<5us): wait 16 ns over 100.0% of acquisitions, hold 149 ns over 100.0% | slow ops hold 2.4% of all WAIT ticks and 4.6% of all HOLD ticks
+  admit+pump  :    19 ns/op wait,   313 ns/op hold (fast <5us:  299 ns/op over 99.9% of its calls)
+  job_state   :    16 ns/op wait,    33 ns/op hold (fast <5us:   32 ns/op over 100.0% of its calls)
+  complete+pump :    16 ns/op wait,   123 ns/op hold (fast <5us:  117 ns/op over 100.0% of its calls)
+  WAIT % : <100ns 100.0 | <500ns 0.0 | <1us 0.0 | <5us 0.0 | <50us 0.0 | >=50us 0.0
+  HOLD % : <100ns 51.2 | <500ns 47.3 | <1us 1.5 | <5us 0.0 | <50us 0.0 | >=50us 0.0
+  engine: admitted=8373838 completed=8373582 peak_queue=1 queued_now=0
+=== threads=2 target=25000 ===
+mode=real live_conn=256 handler_slots=32 registered=8388608
+paced: target 25000 cycle/s over 2 threads -> one arrival every 80µs per thread
+threads=2 live=256 cycles=125001 -> 24999 cycle/s | per acquisition: wait 254 ns, hold 277 ns | per cycle: wait 1.53 us + hold 1.66 us = 3.19 us (48% wait) | wait max 599.4 us, hold max 820.5 us
+  fast path (<5us): wait 226 ns over 99.9% of acquisitions, hold 253 ns over 99.9% | slow ops hold 11.4% of all WAIT ticks and 8.8% of all HOLD ticks
+  admit+pump  :   484 ns/op wait,   560 ns/op hold (fast <5us:  505 ns/op over 99.7% of its calls)
+  job_state   :   148 ns/op wait,    80 ns/op hold (fast <5us:   74 ns/op over 100.0% of its calls)
+  complete+pump :   131 ns/op wait,   191 ns/op hold (fast <5us:  180 ns/op over 99.9% of its calls)
+  WAIT % : <100ns 76.6 | <500ns 6.4 | <1us 8.9 | <5us 8.0 | <50us 0.1 | >=50us 0.0
+  HOLD % : <100ns 31.5 | <500ns 54.8 | <1us 12.5 | <5us 1.2 | <50us 0.1 | >=50us 0.0
+  engine: admitted=250258 completed=250002 peak_queue=1 queued_now=0
+=== threads=4 target=25000 ===
+mode=real live_conn=256 handler_slots=32 registered=8388608
+paced: target 25000 cycle/s over 4 threads -> one arrival every 160µs per thread
+threads=4 live=256 cycles=124998 -> 24998 cycle/s | per acquisition: wait 1034 ns, hold 437 ns | per cycle: wait 6.21 us + hold 2.62 us = 8.83 us (70% wait) | wait max 21770.1 us, hold max 27527.2 us
+  fast path (<5us): wait 471 ns over 95.2% of acquisitions, hold 347 ns over 99.6% | slow ops hold 56.6% of all WAIT ticks and 20.8% of all HOLD ticks
+  admit+pump  :  2033 ns/op wait,   890 ns/op hold (fast <5us:  667 ns/op over 99.2% of its calls)
+  job_state   :   659 ns/op wait,   151 ns/op hold (fast <5us:  134 ns/op over 99.9% of its calls)
+  complete+pump :   411 ns/op wait,   269 ns/op hold (fast <5us:  243 ns/op over 99.8% of its calls)
+  WAIT % : <100ns 74.9 | <500ns 1.7 | <1us 3.9 | <5us 14.6 | <50us 4.7 | >=50us 0.1
+  HOLD % : <100ns 23.2 | <500ns 52.6 | <1us 19.8 | <5us 4.0 | <50us 0.4 | >=50us 0.0
+  engine: admitted=250252 completed=249996 peak_queue=1 queued_now=0
+=== threads=2 target=0 ===
+mode=real live_conn=256 handler_slots=32 registered=8388608
+threads=2 live=256 cycles=2885392 -> 577058 cycle/s | per acquisition: wait 304 ns, hold 246 ns | per cycle: wait 1.82 us + hold 1.47 us = 3.30 us (55% wait) | wait max 17428.3 us, hold max 6713.7 us
+  fast path (<5us): wait 275 ns over 99.9% of acquisitions, hold 230 ns over 99.9% | slow ops hold 9.7% of all WAIT ticks and 6.3% of all HOLD ticks
+  admit+pump  :   632 ns/op wait,   478 ns/op hold (fast <5us:  446 ns/op over 99.8% of its calls)
+  job_state   :   155 ns/op wait,    78 ns/op hold (fast <5us:   74 ns/op over 100.0% of its calls)
+  complete+pump :   125 ns/op wait,   181 ns/op hold (fast <5us:  171 ns/op over 100.0% of its calls)
+  WAIT % : <100ns 75.7 | <500ns 5.8 | <1us 5.2 | <5us 13.3 | <50us 0.1 | >=50us 0.0
+  HOLD % : <100ns 27.1 | <500ns 60.9 | <1us 11.7 | <5us 0.3 | <50us 0.1 | >=50us 0.0
+  engine: admitted=5771040 completed=5770784 peak_queue=1 queued_now=0

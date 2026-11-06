@@ -1,0 +1,32 @@
+  rep1 AetherSched  rps=  25662 p50=4.364 p99=16.183 fail=0
+  rep1 Aether       rps=  19213 p50=5.733 p99=22.258 fail=0
+  rep2 Aether       rps=  27285 p50=4.228 p99=12.078 fail=0
+  rep2 AetherSched  rps=  28411 p50=4.071 p99=10.897 fail=0
+  rep3 AetherSched  rps=  22744 p50=4.742 p99=20.496 fail=0
+  rep3 Aether       rps=  16410 p50=6.279 p99=35.105 fail=0
+  rep4 Aether       rps=  15116 p50=6.729 p99=32.136 fail=0
+  rep4 AetherSched  rps=  14333 p50=7.871 p99=27.745 fail=0
+  rep5 AetherSched  rps=  23045 p50=4.945 p99=15.177 fail=0
+  rep5 Aether       rps=  29947 p50=4.039 p99=8.633 fail=0
+  rep6 Aether       rps=  28894 p50=4.125 p99=9.875 fail=0
+  rep6 AetherSched  rps=  20456 p50=5.324 p99=22.781 fail=0
+  === conns=128 ===
+  Aether       n=6 rps=  22811 spread= 14831 p50=5.189 p99=20.014 fails=0
+  AetherSched  n=6 rps=  22442 spread= 14078 p50=5.220 p99=18.880 fails=0
+  delta = -1.6 % rps   (predicted scheduling work: 8.5 us/req of serialized time)
+  rep1 AetherSched  rps=  23892 p50=8.156 p99=33.349 fail=0
+  rep1 Aether       rps=  22413 p50=10.280 p99=31.760 fail=0
+  rep2 Aether       rps=  19400 p50=11.692 p99=37.610 fail=0
+  rep2 AetherSched  rps=  15808 p50=14.410 p99=44.752 fail=0
+  rep3 AetherSched  rps=  23046 p50=10.596 p99=23.337 fail=0
+  rep3 Aether       rps=  24960 p50=9.508 p99=25.863 fail=0
+  rep4 Aether       rps=  27882 p50=8.778 p99=16.806 fail=0
+  rep4 AetherSched  rps=  14951 p50=15.332 p99=40.701 fail=0
+  rep5 AetherSched  rps=  22532 p50=10.529 p99=26.125 fail=0
+  rep5 Aether       rps=  25447 p50=9.182 p99=29.568 fail=0
+  rep6 Aether       rps=  27445 p50=8.691 p99=20.937 fail=0
+  rep6 AetherSched  rps=  28248 p50=8.588 p99=18.232 fail=0
+  === conns=256 ===
+  Aether       n=6 rps=  24591 spread=  8482 p50=9.688 p99=27.091 fails=0
+  AetherSched  n=6 rps=  21413 spread= 13297 p50=11.268 p99=31.083 fails=0
+  delta = -12.9 % rps   (predicted scheduling work: 23.2 us/req of serialized time)

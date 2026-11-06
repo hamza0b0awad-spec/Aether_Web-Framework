@@ -1,0 +1,18 @@
+rep1 threads=8 target=25000
+threads=8 live=256 cycles=125008 -> 24999 cycle/s | per acquisition: wait 79 ns, hold 301 ns | per cycle: wait 0.47 us + hold 1.81 us = 2.28 us (21% wait) | wait max 4557.9 us, hold max 4551.8 us
+  admit+pump  :   171 ns/op wait,   661 ns/op hold (fast <5us:  611 ns/op over 99.9% of its calls)
+rep1 threads=8 target=0
+threads=8 live=256 cycles=1652131 -> 330404 cycle/s | per acquisition: wait 3418 ns, hold 565 ns | per cycle: wait 20.51 us + hold 3.39 us = 23.90 us (86% wait) | wait max 646.3 us, hold max 583.2 us
+  admit+pump  :  4551 ns/op wait,   885 ns/op hold (fast <5us:  711 ns/op over 98.5% of its calls)
+rep1 threads=2 target=25000
+threads=2 live=256 cycles=125002 -> 25000 cycle/s | per acquisition: wait 20 ns, hold 222 ns | per cycle: wait 0.12 us + hold 1.33 us = 1.45 us (8% wait) | wait max 119.1 us, hold max 174.9 us
+  admit+pump  :    26 ns/op wait,   474 ns/op hold (fast <5us:  461 ns/op over 99.9% of its calls)
+rep2 threads=8 target=25000
+threads=8 live=256 cycles=125008 -> 25000 cycle/s | per acquisition: wait 49 ns, hold 288 ns | per cycle: wait 0.30 us + hold 1.73 us = 2.02 us (15% wait) | wait max 1520.9 us, hold max 1697.3 us
+  admit+pump  :   105 ns/op wait,   631 ns/op hold (fast <5us:  601 ns/op over 99.9% of its calls)
+rep2 threads=8 target=0
+threads=8 live=256 cycles=1642242 -> 328432 cycle/s | per acquisition: wait 3469 ns, hold 538 ns | per cycle: wait 20.81 us + hold 3.23 us = 24.04 us (87% wait) | wait max 32333.7 us, hold max 2460.3 us
+  admit+pump  :  4566 ns/op wait,   827 ns/op hold (fast <5us:  711 ns/op over 99.0% of its calls)
+rep2 threads=2 target=25000
+threads=2 live=256 cycles=125002 -> 25000 cycle/s | per acquisition: wait 27 ns, hold 223 ns | per cycle: wait 0.16 us + hold 1.34 us = 1.50 us (11% wait) | wait max 4187.4 us, hold max 438.8 us
+  admit+pump  :    47 ns/op wait,   483 ns/op hold (fast <5us:  470 ns/op over 99.9% of its calls)

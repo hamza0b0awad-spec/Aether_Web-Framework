@@ -1,0 +1,23 @@
+# sha256 of the five files the 2026-10-19 baseline expected to change. No command line was
+# recorded; the six lines are `sha256sum` output, the first five printed from `framework/`.
+#
+# Line 6 is the same file as line 1 (`framework/http/src/response.rs`), printed from the
+# repository root, and it carries a different hash: the two lines were not taken in one pass, so
+# this file is not a single snapshot and line 1 does not settle response.rs's revert anchor.
+#
+# Re-checked 2026-10-27 against history, with a positive control after the first attempt read the
+# wrong paths and returned a uniform negative:
+#   - middleware/src/cors.rs, scheduler/src/policy.rs and scheduler/src/engine.rs reproduce from
+#     `1116e1a`, the first commit, via `git show 1116e1a:framework/<path> | sha256sum`. Those three
+#     anchors resolve from the repository.
+#   - aether/src/app.rs and both response.rs lines match no committed blob at either layout, nor a
+#     CRLF variant of one: they were taken on a working tree that changed before that commit.
+# `sha256sum -c` against the current tree reports six failures either way, which is what a
+# pre-optimization anchor should look like. What this file cannot say is which bytes produced
+# either response.rs hash.
+e32dc9652b5c56c92459b207a533df5225a64d5c0e85901e1757bd478f0eec02 *http/src/response.rs
+4f4a0c4d09068b50af14518728b240527c36e006b2f47e5c932afe02b720ecd0 *aether/src/app.rs
+25553771a40003af2aac6ca199ed46ef03d8c5a585c66d57228fafb16ca239ae *middleware/src/cors.rs
+a2885e29ce5fb287b2a7cdcd96aadbce24f840822c978c2e62e0d2e5967fe902 *scheduler/src/policy.rs
+2c05ccd9e65fe94fc69c5cf790416e82c33068dd51537a84d2bd514b6815436a *scheduler/src/engine.rs
+3bc4c0badc3314083254e6af4366da7ebad6110aaa932d8e261768149d08cd08 *C:/Users/hamza/Desktop/nwfm/aether-web-framework/framework/http/src/response.rs

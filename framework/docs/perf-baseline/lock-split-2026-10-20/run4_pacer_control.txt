@@ -1,0 +1,52 @@
+=== threads=8 target=25000 pacer=spin ===
+threads=8 live=256 cycles=124980 -> 24995 cycle/s | per acquisition: wait 4941 ns, hold 708 ns | per cycle: wait 29.65 us + hold 4.25 us = 33.89 us (87% wait) | wait max 31929.2 us, hold max 2443.7 us
+  fast path (<5us): wait 349 ns over 84.1% of acquisitions, hold 513 ns over 98.7% | slow ops hold 94.1% of all WAIT ticks and 28.4% of all HOLD ticks
+  admit+pump  :  9303 ns/op wait,  1253 ns/op hold (fast <5us:  945 ns/op over 97.2% of its calls)
+  job_state   :  3562 ns/op wait,   413 ns/op hold (fast <5us:  248 ns/op over 99.4% of its calls)
+  complete+pump :  1958 ns/op wait,   458 ns/op hold (fast <5us:  357 ns/op over 99.6% of its calls)
+  WAIT % : <100ns 71.0 | <500ns 2.0 | <1us 2.0 | <5us 9.2 | <50us 14.8 | >=50us 1.0
+  engine: admitted=250216 completed=249960 peak_queue=1 queued_now=0
+=== threads=8 target=25000 pacer=sleep ===
+threads=8 live=256 cycles=124972 -> 24990 cycle/s | per acquisition: wait 5024 ns, hold 1449 ns | per cycle: wait 30.14 us + hold 8.70 us = 38.84 us (78% wait) | wait max 7927.0 us, hold max 7864.5 us
+  fast path (<5us): wait 299 ns over 89.1% of acquisitions, hold 804 ns over 94.8% | slow ops hold 94.7% of all WAIT ticks and 47.4% of all HOLD ticks
+  admit+pump  :  8369 ns/op wait,  2846 ns/op hold (fast <5us: 1572 ns/op over 87.9% of its calls)
+  job_state   :  4625 ns/op wait,   590 ns/op hold (fast <5us:  255 ns/op over 98.0% of its calls)
+  complete+pump :  2077 ns/op wait,   911 ns/op hold (fast <5us:  665 ns/op over 98.5% of its calls)
+  WAIT % : <100ns 65.6 | <500ns 12.5 | <1us 3.2 | <5us 7.7 | <50us 7.7 | >=50us 3.2
+  engine: admitted=250200 completed=249944 peak_queue=1 queued_now=0
+=== threads=4 target=25000 pacer=sleep ===
+threads=4 live=256 cycles=124994 -> 24993 cycle/s | per acquisition: wait 2293 ns, hold 1134 ns | per cycle: wait 13.76 us + hold 6.80 us = 20.56 us (67% wait) | wait max 579.6 us, hold max 440.5 us
+  fast path (<5us): wait 343 ns over 91.6% of acquisitions, hold 805 ns over 97.1% | slow ops hold 86.3% of all WAIT ticks and 31.0% of all HOLD ticks
+  admit+pump  :  3611 ns/op wait,  2230 ns/op hold (fast <5us: 1532 ns/op over 93.1% of its calls)
+  job_state   :  2010 ns/op wait,   388 ns/op hold (fast <5us:  246 ns/op over 99.1% of its calls)
+  complete+pump :  1258 ns/op wait,   783 ns/op hold (fast <5us:  682 ns/op over 99.2% of its calls)
+  WAIT % : <100ns 66.0 | <500ns 13.6 | <1us 2.5 | <5us 9.5 | <50us 7.4 | >=50us 1.0
+  engine: admitted=250244 completed=249988 peak_queue=1 queued_now=0
+=== threads=2 target=25000 pacer=sleep ===
+threads=2 live=256 cycles=124997 -> 24996 cycle/s | per acquisition: wait 605 ns, hold 777 ns | per cycle: wait 3.63 us + hold 4.66 us = 8.29 us (44% wait) | wait max 277.1 us, hold max 352.7 us
+  fast path (<5us): wait 372 ns over 97.1% of acquisitions, hold 688 ns over 99.0% | slow ops hold 40.2% of all WAIT ticks and 12.3% of all HOLD ticks
+  admit+pump  :  1034 ns/op wait,  1597 ns/op hold (fast <5us: 1362 ns/op over 97.1% of its calls)
+  job_state   :   338 ns/op wait,   164 ns/op hold (fast <5us:  162 ns/op over 100.0% of its calls)
+  complete+pump :   442 ns/op wait,   570 ns/op hold (fast <5us:  561 ns/op over 100.0% of its calls)
+  WAIT % : <100ns 71.3 | <500ns 10.2 | <1us 3.3 | <5us 12.3 | <50us 2.9 | >=50us 0.0
+  engine: admitted=250250 completed=249994 peak_queue=1 queued_now=0
+=== threads=8 target=100000 pacer=sleep ===
+threads=8 live=256 cycles=499942 -> 99981 cycle/s | per acquisition: wait 1982 ns, hold 491 ns | per cycle: wait 11.89 us + hold 2.94 us = 14.83 us (80% wait) | wait max 3354.9 us, hold max 3372.9 us
+  fast path (<5us): wait 313 ns over 91.9% of acquisitions, hold 358 ns over 98.9% | slow ops hold 85.5% of all WAIT ticks and 27.9% of all HOLD ticks
+  admit+pump  :  3012 ns/op wait,   861 ns/op hold (fast <5us:  654 ns/op over 98.4% of its calls)
+  job_state   :  1663 ns/op wait,   239 ns/op hold (fast <5us:  134 ns/op over 99.1% of its calls)
+  complete+pump :  1270 ns/op wait,   372 ns/op hold (fast <5us:  287 ns/op over 99.4% of its calls)
+  WAIT % : <100ns 75.2 | <500ns 4.1 | <1us 2.8 | <5us 9.8 | <50us 7.6 | >=50us 0.5
+  engine: admitted=1000140 completed=999884 peak_queue=1 queued_now=0
+=== threads=8 target=25000 pacer=spin ===
+threads=8 live=256 cycles=124979 -> 24995 cycle/s | per acquisition: wait 7564 ns, hold 1148 ns | per cycle: wait 45.38 us + hold 6.89 us = 52.27 us (87% wait) | wait max 29822.4 us, hold max 9233.5 us
+  fast path (<5us): wait 321 ns over 86.4% of acquisitions, hold 485 ns over 98.4% | slow ops hold 96.3% of all WAIT ticks and 58.4% of all HOLD ticks
+  admit+pump  : 13667 ns/op wait,  1984 ns/op hold (fast <5us:  938 ns/op over 96.8% of its calls)
+  job_state   :  5895 ns/op wait,   723 ns/op hold (fast <5us:  196 ns/op over 99.1% of its calls)
+  complete+pump :  3128 ns/op wait,   737 ns/op hold (fast <5us:  331 ns/op over 99.3% of its calls)
+  WAIT % : <100ns 73.7 | <500ns 1.7 | <1us 2.3 | <5us 8.7 | <50us 11.8 | >=50us 1.7
+  engine: admitted=250214 completed=249958 peak_queue=1 queued_now=0
+=== null 8 threads 25k sleep (floor) ===
+threads=8 live=256 cycles=124978 -> 24991 cycle/s | per acquisition: wait 119 ns, hold 51 ns | per cycle: wait 0.71 us + hold 0.31 us = 1.02 us (70% wait) | wait max 145.2 us, hold max 53.4 us
+  fast path (<5us): wait 79 ns over 99.7% of acquisitions, hold 38 ns over 99.9% | slow ops hold 33.6% of all WAIT ticks and 25.2% of all HOLD ticks
+  WAIT % : <100ns 89.5 | <500ns 7.3 | <1us 1.4 | <5us 1.6 | <50us 0.3 | >=50us 0.0

@@ -1,0 +1,52 @@
+=== unpaced (lock saturated) ===
+mode=real live_conn=256 handler_slots=32 registered=8388608
+threads=8 live=256 cycles=1909298 -> 381835 cycle/s | per acquisition: wait 2944 ns, hold 506 ns | per cycle: wait 17.66 us + hold 3.03 us = 20.70 us (85% wait) | wait max 8795.9 us, hold max 8525.8 us
+  fast path (<5us): wait 341 ns over 90.6% of acquisitions, hold 342 ns over 98.9% | slow ops hold 89.5% of all WAIT ticks and 33.1% of all HOLD ticks
+  WAIT % : <100ns 74.3 | <500ns 3.1 | <1us 2.4 | <5us 10.8 | <50us 8.7 | >=50us 0.7
+  HOLD % : <100ns 21.4 | <500ns 57.0 | <1us 17.7 | <5us 2.8 | <50us 1.0 | >=50us 0.0
+  engine: admitted=3818852 completed=3818596 peak_queue=1 queued_now=0
+
+=== paced 25k cycle/s, 8 threads ===
+mode=real live_conn=256 handler_slots=32 registered=8388608
+paced: target 25000 cycle/s over 8 threads -> one arrival every 320µs per thread
+threads=8 live=256 cycles=124942 -> 24975 cycle/s | per acquisition: wait 12304 ns, hold 1213 ns | per cycle: wait 73.82 us + hold 7.28 us = 81.10 us (91% wait) | wait max 22647.7 us, hold max 14387.0 us
+  fast path (<5us): wait 264 ns over 91.0% of acquisitions, hold 432 ns over 98.5% | slow ops hold 98.0% of all WAIT ticks and 65.0% of all HOLD ticks
+  WAIT % : <100ns 79.7 | <500ns 1.6 | <1us 2.0 | <5us 7.7 | <50us 7.2 | >=50us 1.8
+  HOLD % : <100ns 24.1 | <500ns 47.7 | <1us 18.3 | <5us 8.4 | <50us 1.4 | >=50us 0.1
+  engine: admitted=250140 completed=249884 peak_queue=1 queued_now=0
+
+=== paced 25k, 4 threads ===
+mode=real live_conn=256 handler_slots=32 registered=8388608
+paced: target 25000 cycle/s over 4 threads -> one arrival every 160µs per thread
+threads=4 live=256 cycles=124998 -> 24999 cycle/s | per acquisition: wait 2657 ns, hold 737 ns | per cycle: wait 15.94 us + hold 4.42 us = 20.37 us (78% wait) | wait max 23514.9 us, hold max 9078.3 us
+  fast path (<5us): wait 347 ns over 93.7% of acquisitions, hold 459 ns over 98.7% | slow ops hold 87.8% of all WAIT ticks and 38.6% of all HOLD ticks
+  WAIT % : <100ns 78.9 | <500ns 1.9 | <1us 2.5 | <5us 10.3 | <50us 5.9 | >=50us 0.4
+  HOLD % : <100ns 23.3 | <500ns 42.8 | <1us 23.2 | <5us 9.5 | <50us 1.3 | >=50us 0.1
+  engine: admitted=250252 completed=249996 peak_queue=1 queued_now=0
+
+=== paced 25k, 2 threads ===
+mode=real live_conn=256 handler_slots=32 registered=8388608
+paced: target 25000 cycle/s over 2 threads -> one arrival every 80µs per thread
+threads=2 live=256 cycles=125001 -> 24999 cycle/s | per acquisition: wait 345 ns, hold 395 ns | per cycle: wait 2.07 us + hold 2.37 us = 4.44 us (47% wait) | wait max 3252.5 us, hold max 4785.6 us
+  fast path (<5us): wait 253 ns over 99.8% of acquisitions, hold 322 ns over 99.8% | slow ops hold 26.9% of all WAIT ticks and 18.6% of all HOLD ticks
+  WAIT % : <100ns 81.4 | <500ns 3.8 | <1us 5.3 | <5us 9.4 | <50us 0.2 | >=50us 0.0
+  HOLD % : <100ns 27.2 | <500ns 52.4 | <1us 16.1 | <5us 4.0 | <50us 0.2 | >=50us 0.0
+  engine: admitted=250258 completed=250002 peak_queue=1 queued_now=0
+
+=== paced 25k, 1 thread ===
+mode=real live_conn=256 handler_slots=32 registered=8388608
+paced: target 25000 cycle/s over 1 threads -> one arrival every 40µs per thread
+threads=1 live=256 cycles=125001 -> 25000 cycle/s | per acquisition: wait 22 ns, hold 258 ns | per cycle: wait 0.13 us + hold 1.55 us = 1.68 us (8% wait) | wait max 1899.0 us, hold max 4470.1 us
+  fast path (<5us): wait 19 ns over 100.0% of acquisitions, hold 220 ns over 99.9% | slow ops hold 15.2% of all WAIT ticks and 14.8% of all HOLD ticks
+  WAIT % : <100ns 99.5 | <500ns 0.4 | <1us 0.1 | <5us 0.0 | <50us 0.0 | >=50us 0.0
+  HOLD % : <100ns 33.5 | <500ns 56.3 | <1us 8.2 | <5us 1.8 | <50us 0.1 | >=50us 0.0
+  engine: admitted=250258 completed=250002 peak_queue=1 queued_now=0
+
+=== null mode paced 25k, 8 threads (floor) ===
+mode=null live_conn=256 handler_slots=32 registered=8388608
+paced: target 25000 cycle/s over 8 threads -> one arrival every 320µs per thread
+threads=8 live=256 cycles=124980 -> 24994 cycle/s | per acquisition: wait 799 ns, hold 196 ns | per cycle: wait 4.79 us + hold 1.17 us = 5.97 us (80% wait) | wait max 12223.5 us, hold max 8644.2 us
+  fast path (<5us): wait 319 ns over 98.2% of acquisitions, hold 102 ns over 100.0% | slow ops hold 60.7% of all WAIT ticks and 47.8% of all HOLD ticks
+  WAIT % : <100ns 73.7 | <500ns 11.9 | <1us 2.9 | <5us 9.7 | <50us 1.7 | >=50us 0.0
+  HOLD % : <100ns 75.8 | <500ns 20.4 | <1us 3.4 | <5us 0.3 | <50us 0.0 | >=50us 0.0
+  engine: admitted=256 completed=0 peak_queue=1 queued_now=0

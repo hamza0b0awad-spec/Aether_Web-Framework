@@ -1,0 +1,30 @@
+cost of one request cycle (admit+pump+complete+pump) vs live connections
+
+                     request_cycle active=1        695.01 ns/op  (0.70 us)
+
+                     request_cycle active=32      2406.10 ns/op  (2.41 us)
+
+                     request_cycle active=64      4284.46 ns/op  (4.28 us)
+
+                     request_cycle active=128     9803.18 ns/op  (9.80 us)
+
+                     request_cycle active=256    22147.55 ns/op  (22.15 us)
+
+                     request_cycle active=512    48897.65 ns/op  (48.90 us)
+
+                     request_cycle active=1024   96321.41 ns/op  (96.32 us)
+
+--- breakdown at 256 live connections ---
+                         pump only  10766.18 ns  (10.77 us)
+          admit + cancel (no pump)     95.51 ns  (0.10 us)
+           complete of a fresh job   8191.44 ns  (8.19 us)
+
+--- verdict ---
+256 vs 32 live connections: 9.20x
+active=1     0.70 us/request
+active=32    2.41 us/request
+active=64    4.28 us/request
+active=128   9.80 us/request
+active=256   22.15 us/request
+active=512   48.90 us/request
+active=1024  96.32 us/request
