@@ -1,0 +1,18 @@
+[
+  {
+    "id": "PROB-0004",
+    "title": "Published scheduler comparison tables are historical",
+    "description": "SCHEDULING_COMPARISON.md rows were generated 2026-10-19, before the rotation-index fix and while thr. work/s counted generated work (now served work, commit da2b547). The tables are annotated as historical; regenerating them requires the comparison sweep the owner paused. Resume only with pre-declared confirm/refute criteria.",
+    "created_at": "2026-10-20T01:32:45Z",
+    "status": "open",
+    "type": "problem"
+  },
+  {
+    "id": "PROB-0012",
+    "title": "Cross-platform parity is a stated requirement but only Windows has actually been built and tested",
+    "description": "Every green result in this repository, including the transport/TLS stage, comes from Windows 10.0.26200 x64 (MSVC). This host has no WSL and no container runtime, so Linux has never run cargo test or cargo build --release here, and macOS never at all. Recorded as an open verification gap, not a failure: the new layer has no platform cfg (the only one in tls.rs/transport.rs is #[cfg(test)]) and depends on rustls + ring + tokio-rustls, which is an argument for portability rather than evidence of it. Also unverified on Linux: whether the graceful-shutdown reasoning in transport::refuse (written against Windows RST behaviour) and the tokio peek semantics hold identically. 2026-10-27 update: the typing half advanced. `cargo check -p <crate> --target x86_64-unknown-linux-gnu` exits 0 for eleven of the thirteen library crates (core, http, router, runtime, middleware, validation, serialization, dependency, openapi, observability, scheduler). The two that fail (security, websocket) fail inside `ring v0.17.14`'s build script for want of `x86_64-linux-gnu-gcc`, identically with `--no-default-features`, so the blocker is a cross C toolchain and not this repository's code. Re-checked on this host the same day: no docker, no podman, no WSL. The status is unchanged because nothing has executed on Linux yet, and no document may say otherwise.",
+    "created_at": "2026-10-20T19:59:34Z",
+    "status": "open",
+    "type": "problem"
+  }
+]

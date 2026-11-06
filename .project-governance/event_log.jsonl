@@ -1,0 +1,99 @@
+{"time": "2026-10-18T16:09:29Z", "action": "new_requirement", "id": "REQ-0001", "title": "Production-readiness hardening and measured audit"}
+{"time": "2026-10-18T16:11:53Z", "action": "map_refreshed"}
+{"time": "2026-10-18T16:11:54Z", "action": "done_and_deleted", "id": "REQ-0001", "from": "requirements"}
+{"time": "2026-10-18T16:17:47Z", "action": "new_requirement", "id": "REQ-0001", "title": "Production completeness round 2: testable lifecycle, shutdown, headers, multipart, Range, E2E"}
+{"time": "2026-10-18T16:31:26Z", "action": "new_requirement", "id": "REQ-0002", "title": "RFC 6455 WebSocket support: validated handshake, bounded driver, app.ws routes, E2E"}
+{"time": "2026-10-18T16:31:28Z", "action": "done_and_deleted", "id": "REQ-0001", "from": "requirements"}
+{"time": "2026-10-18T16:31:29Z", "action": "done_and_deleted", "id": "REQ-0002", "from": "requirements"}
+{"time": "2026-10-18T16:31:29Z", "action": "map_refreshed"}
+{"time": "2026-10-18T17:11:49Z", "action": "new_requirement", "id": "REQ-0001", "title": "Execute full Aether re-engineering mission per attached vision doc: 10 phases (audit, feature matrix, baselines, algorithm review, prototypes, implementation, security verification, binary optimization, competitive benchmarks, final audit) to bring Aether to production-ready state competing with Axum/Actix"}
+{"time": "2026-10-19T23:45:27Z", "action": "map_refreshed"}
+{"time": "2026-10-20T01:32:44Z", "action": "new_problem", "id": "PROB-0001", "title": "Four unwired crates are documented as shipped capabilities"}
+{"time": "2026-10-20T01:32:44Z", "action": "new_problem", "id": "PROB-0002", "title": "QueueToken cancel-safety fix is unpinned by any test"}
+{"time": "2026-10-20T01:32:45Z", "action": "new_problem", "id": "PROB-0003", "title": "SchedulingPolicy cannot be implemented outside the scheduler crate"}
+{"time": "2026-10-20T01:32:45Z", "action": "new_problem", "id": "PROB-0004", "title": "Published scheduler comparison tables are historical"}
+{"time": "2026-10-20T01:32:45Z", "action": "new_problem", "id": "PROB-0005", "title": "RequestContext still owns header field lines twice"}
+{"time": "2026-10-20T01:32:46Z", "action": "new_problem", "id": "PROB-0006", "title": "Known deferred HTTP/1.x protocol gaps"}
+{"time": "2026-10-20T01:32:46Z", "action": "new_problem", "id": "PROB-0007", "title": "Router merges cross-named path params silently"}
+{"time": "2026-10-20T12:03:36Z", "action": "done_and_deleted", "id": "PROB-0002", "from": "problems"}
+{"time": "2026-10-20T12:13:29Z", "action": "new_proposal", "id": "PROP-0001", "title": "Wire aether-security (JWT + constant_time_eq) into the aether facade"}
+{"time": "2026-10-20T12:13:56Z", "action": "done_and_deleted", "id": "PROB-0001", "from": "problems"}
+{"time": "2026-10-20T12:25:53Z", "action": "done_and_deleted", "id": "PROB-0007", "from": "problems"}
+{"time": "2026-10-20T12:39:19Z", "action": "done_and_deleted", "id": "PROB-0003", "from": "problems"}
+{"time": "2026-10-20T14:36:51Z", "action": "new_problem", "id": "PROB-0007", "title": "Connection memory is charged on buffer length, not capacity"}
+{"time": "2026-10-20T15:15:24Z", "action": "new_problem", "id": "PROB-0009", "title": "Handler errors always answer 400, including internal failures"}
+{"time": "2026-10-20T16:29:30Z", "action": "done_and_deleted", "id": "PROB-0006", "from": "problems"}
+{"time": "2026-10-20T19:43:39Z", "action": "map_refreshed"}
+{"time": "2026-10-20T19:44:21Z", "action": "new_problem", "id": "PROB-0010", "title": "Build cache is version-controlled: framework/target has 10,101 tracked files (8.3 GB) and no .gitignore exists"}
+{"time": "2026-10-20T19:53:31Z", "action": "new_problem", "id": "PROB-0011", "title": "AetherApp mixes &mut-self route registration with by-value builders, so no configuration can be chained"}
+{"time": "2026-10-20T19:59:34Z", "action": "new_problem", "id": "PROB-0012", "title": "Cross-platform parity is a stated requirement but only Windows has actually been built and tested"}
+{"time": "2026-10-20T22:11:45Z", "action": "done_and_deleted", "id": "PROB-0010", "from": "problems"}
+{"time": "2026-10-20T22:11:45Z", "action": "map_refreshed"}
+{"time": "2026-10-20T23:53:05Z", "action": "new_problem", "id": "PROB-0013", "title": "HTTP/2 never released receive flow-control credit, so an upload larger than one window could not be served"}
+{"time": "2026-10-20T23:53:05Z", "action": "new_problem", "id": "PROB-0014", "title": "max_concurrent_streams and max_headers_count are advertised and enforced but cannot be configured by the operator"}
+{"time": "2026-10-20T23:53:06Z", "action": "new_problem", "id": "PROB-0015", "title": "The HTTP/2 response side has no bounded write: a whole payload is handed to h2 in one send_data call"}
+{"time": "2026-10-20T23:53:10Z", "action": "done_and_deleted", "id": "PROB-0013", "from": "problems"}
+{"time": "2026-10-21T00:16:30Z", "action": "map_refreshed"}
+{"time": "2026-10-21T00:29:22Z", "action": "map_refreshed"}
+{"time": "2026-10-21T12:27:05Z", "action": "new_problem", "id": "PROB-0016", "title": "Extension payloads are not priced by the scheduler memory budget"}
+{"time": "2026-10-21T12:28:36Z", "action": "map_refreshed"}
+{"time": "2026-10-21T12:45:14Z", "action": "new_problem", "id": "PROB-0017", "title": "WebSocket upgrade routes bypassed the user middleware chain"}
+{"time": "2026-10-21T12:57:10Z", "action": "done_and_deleted", "id": "PROB-0017", "from": "problems"}
+{"time": "2026-10-21T12:57:10Z", "action": "map_refreshed"}
+{"time": "2026-10-21T13:20:36Z", "action": "map_refreshed"}
+{"time": "2026-10-21T14:02:42Z", "action": "map_refreshed"}
+{"time": "2026-10-21T14:17:16Z", "action": "map_refreshed"}
+{"time": "2026-10-22T19:09:17Z", "action": "done_and_deleted", "id": "PROB-0014", "from": "problems"}
+{"time": "2026-10-23T13:43:48Z", "action": "done_and_deleted", "id": "PROB-0008", "from": "problems"}
+{"time": "2026-10-23T13:43:59Z", "action": "new_problem", "id": "PROB-0017", "title": "HTTP/1 response write buffer is not priced by the memory budget"}
+{"time": "2026-10-23T13:51:10Z", "action": "new_problem", "id": "PROB-0018", "title": "HTTP/2 stream body charge grows by written length, not reserved block"}
+{"time": "2026-10-23T18:47:38Z", "action": "new_problem", "id": "PROB-0019", "title": "Closed problem IDs are recycled, so a doc citation of a closed ID silently changes meaning"}
+{"time": "2026-10-23T18:59:37Z", "action": "done_and_deleted", "id": "PROB-0017", "from": "problems"}
+{"time": "2026-10-23T18:59:37Z", "action": "done_and_deleted", "id": "PROB-0018", "from": "problems"}
+{"time": "2026-10-23T19:19:57Z", "action": "new_problem", "id": "PROB-0020", "title": "HTTP/2 responses are unpriced: send_data hands the whole body to the h2 crate's buffers"}
+{"time": "2026-10-24T12:51:39Z", "action": "new_problem", "id": "PROB-0021", "title": "HTTP/2 tears a connection down at keep_alive_timeout while a response is still unflushed"}
+{"time": "2026-10-24T13:46:59Z", "action": "new_problem", "id": "PROB-0022", "title": "HTTP/2 write_timeout can be renewed forever by a peer that trickles flow-control credit"}
+{"time": "2026-10-24T14:16:43Z", "action": "done_and_deleted", "id": "PROB-0015", "from": "problems"}
+{"time": "2026-10-24T14:16:44Z", "action": "done_and_deleted", "id": "PROB-0021", "from": "problems"}
+{"time": "2026-10-24T19:18:06Z", "action": "done_and_deleted", "id": "PROB-0020", "from": "problems"}
+{"time": "2026-10-24T19:18:06Z", "action": "new_problem", "id": "PROB-0023", "title": "HTTP/2 response blocks the stream does not uniquely own are still unpriced, and a stream holding two blocks is priced by one"}
+{"time": "2026-10-24T20:50:34Z", "action": "done_and_deleted", "id": "PROB-0019", "from": "problems"}
+{"time": "2026-10-25T14:40:33Z", "action": "new_problem", "id": "PROB-0024", "title": "E1001 hint recommends lsof/xargs kill on a Windows-only build"}
+{"time": "2026-10-25T14:40:49Z", "action": "new_problem", "id": "PROB-0025", "title": "Governance tool creates a parallel ledger tree when run from a subdirectory, and recycles live IDs in it"}
+{"time": "2026-10-25T16:19:46Z", "action": "done_and_deleted", "id": "PROB-0024", "from": "problems"}
+{"time": "2026-10-25T17:55:06Z", "action": "new_problem", "id": "PROB-0026", "title": "Governance init on an existing ledger replaces owner-written AGENTS.md and SYSTEM_PROMPT.md with the template"}
+{"time": "2026-10-25T17:55:11Z", "action": "done_and_deleted", "id": "PROB-0025", "from": "problems"}
+{"time": "2026-10-25T17:55:11Z", "action": "done_and_deleted", "id": "PROB-0026", "from": "problems"}
+{"time": "2026-10-25T18:31:41Z", "action": "done_and_deleted", "id": "PROB-0022", "from": "problems"}
+{"time": "2026-10-25T21:17:34Z", "action": "new_problem", "id": "PROB-0027", "title": "HTTP/2 pricing cannot see heap a handler wraps in Bytes::from_owner"}
+{"time": "2026-10-25T21:17:45Z", "action": "done_and_deleted", "id": "PROB-0023", "from": "problems"}
+{"time": "2026-10-25T22:29:47Z", "action": "new_problem", "id": "PROB-0028", "title": "Chunked bodies are refused by a wire-byte budget while the advertised limit counts decoded bytes"}
+{"time": "2026-10-25T22:30:05Z", "action": "new_problem", "id": "PROB-0029", "title": "A buffer-limit 413 is never delivered: the refusal closes over the client's in-flight body"}
+{"time": "2026-10-25T22:30:05Z", "action": "new_problem", "id": "PROB-0030", "title": "WebSocket frames are written with no timeout, so a peer that stops reading parks a session and its buffer charge"}
+{"time": "2026-10-25T22:30:14Z", "action": "new_problem", "id": "PROB-0031", "title": "One node binds one param name per method, so sibling routes expose the wrong capture key"}
+{"time": "2026-10-25T23:25:49Z", "action": "done_and_deleted", "id": "PROB-0029", "from": "problems"}
+{"time": "2026-10-26T00:13:07Z", "action": "done_and_deleted", "id": "PROB-0031", "from": "problems"}
+{"time": "2026-10-26T16:25:03Z", "action": "done_and_deleted", "id": "PROB-0030", "from": "problems"}
+{"time": "2026-10-26T20:08:56Z", "action": "done_and_deleted", "id": "PROB-0016", "from": "problems"}
+{"time": "2026-10-26T20:08:56Z", "action": "done_and_deleted", "id": "PROB-0027", "from": "problems"}
+{"time": "2026-10-26T20:58:56Z", "action": "new_problem", "id": "PROB-0032", "title": "The docs/ human-facing set cites line numbers that no longer hold their own quoted code"}
+{"time": "2026-10-26T20:59:34Z", "action": "done_and_deleted", "id": "PROB-0028", "from": "problems"}
+{"time": "2026-10-26T22:24:06Z", "action": "new_problem", "id": "PROB-0033", "title": "Two HTTP/2 memory-registration tests sampled their baseline at handshake time, so under suite load the connection's own charge had not landed and the release assertion could only fail"}
+{"time": "2026-10-26T22:27:57Z", "action": "done_and_deleted", "id": "PROB-0033", "from": "problems"}
+{"time": "2026-10-26T23:30:47Z", "action": "done_and_deleted", "id": "PROB-0032", "from": "problems"}
+{"time": "2026-10-27T12:08:36Z", "action": "map_refreshed"}
+{"time": "2026-10-27T13:52:46Z", "action": "done_and_deleted", "id": "PROB-0009", "from": "problems"}
+{"time": "2026-10-27T21:08:46Z", "action": "done_and_deleted", "id": "PROP-0001", "from": "proposals"}
+{"time": "2026-11-02T14:48:27Z", "action": "map_refreshed"}
+{"time": "2026-11-02T15:26:56Z", "action": "map_refreshed"}
+{"time": "2026-11-02T16:45:13Z", "action": "map_refreshed"}
+{"time": "2026-11-02T16:56:51Z", "action": "map_refreshed"}
+{"time": "2026-11-02T18:13:51Z", "action": "map_refreshed"}
+{"time": "2026-11-02T19:33:14Z", "action": "map_refreshed"}
+{"time": "2026-11-03T01:18:26Z", "action": "map_refreshed"}
+{"time": "2026-11-04T13:41:22Z", "action": "new_problem", "id": "PROB-0034", "title": "A buffered request whose body stops arriving is closed with no answer, not 408 by max_receive_time"}
+{"time": "2026-11-04T15:27:23Z", "action": "map_refreshed"}
+{"time": "2026-11-04T16:35:30Z", "action": "done_and_deleted", "id": "PROB-0034", "from": "problems"}
+{"time": "2026-11-04T16:36:32Z", "action": "map_refreshed"}
+{"time": "2026-11-06T13:39:11Z", "action": "done_and_deleted", "id": "PROB-0005", "from": "problems"}
+{"time": "2026-11-06T13:39:12Z", "action": "done_and_deleted", "id": "PROB-0011", "from": "problems"}
